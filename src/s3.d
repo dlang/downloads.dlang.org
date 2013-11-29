@@ -105,8 +105,8 @@ string canonicalizedQueryString(
     string md5  = (tmp ? *tmp : "");
 
     return method ~ "\n" ~             // VERB
-           type ~ "\n" ~               // CONTENT-MD5
-           md5 ~ "\n" ~                // CONTENT-TYPE
+           type ~ "\n" ~               // CONTENT-TYPE
+           md5 ~ "\n" ~                // CONTENT-MD5
            expires ~ "\n" ~            // time since epoch
            canonicalizedAmzHeaders(headers) ~  // always ends in an \n, so don't add another
            canonicalizedResource(queryArgs, bucket, key);
