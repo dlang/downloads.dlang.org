@@ -20,11 +20,11 @@ struct DirStructure
     DirStructure[string] subdirs; // map of dirname -> DirStructure, similar to files
 }
 
-DirStructure makeIntoDirStructure(S3Object[] contents)
+DirStructure makeIntoDirStructure(S3ListResults contents)
 {
     DirStructure dir;
 
-    foreach(obj; contents)
+    foreach(obj; contents[])
     {
         string[] nameparts = split(obj.key, "/");
 
@@ -130,16 +130,21 @@ void main()
 {
     load_config("config.json");
 
-    AWS a;
+    auto a = new AWS;
     a.accessKey = c.aws_key;
     a.secretKey = c.aws_secret;
     a.endpoint = "s3.amazonaws.com";
 
-    S3ListResults contents = listBucketContents(a, "downloads.dlang.org");
+    auto s3 = new S3(a);
+    auto s3bucket = new S3Bucket(s3);
+    s3bucket.name = "downloads.dlang.org";
+
+    S3ListResults contents = listBucketContents(s3bucket);
+
 
     //writeln("contents: ", contents);
 
-    DirStructure dir = makeIntoDirStructure(contents.contents);
+    DirStructure dir = makeIntoDirStructure(contents);
 
     iterate([], dir);
 }
