@@ -1,8 +1,8 @@
-DMD=dmd
+DMD?=dmd
 DFLAGS=-m64 -gc
 
 BUILD_GEN_INDEX_OBJS=gen_index.o config.o aws.o s3.o
-BUILD_GEN_INDEX_LIBS=-L-lssl -L-lcurl
+BUILD_GEN_INDEX_LIBS=-L-lcrypto -L-lcurl
 
 all: build-gen-index
 
