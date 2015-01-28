@@ -1,4 +1,4 @@
-module std.aws;
+module aws;
 
 import etc.c.curl;
 import std.net.curl;
@@ -8,7 +8,7 @@ import std.datetime;
 import std.string;
 import std.stdio;
 
-struct AWS
+class AWS
 {
     string accessKey;
     string secretKey;
