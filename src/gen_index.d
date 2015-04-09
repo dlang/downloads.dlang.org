@@ -72,7 +72,7 @@ string dirlinks(string[] dirnames)
     return result;
 }
 
-void buildIndex(string[] dirnames, const DirStructure[string] dirs, const S3Object[string] files)
+void buildIndex(string basedir, string[] dirnames, const DirStructure[string] dirs, const S3Object[string] files)
 {
     writefln("dirnames: %s", dirnames);
     string joined = "/" ~ join(dirnames, "/");
@@ -80,7 +80,7 @@ void buildIndex(string[] dirnames, const DirStructure[string] dirs, const S3Obje
 
     writefln("generating index for: %s", joined);
 
-    string dir = "/mnt/downloads.dlang.org/" ~ joined ~ "/";
+    string dir = basedir ~ joined;
 
     if (!file.exists(dir))
         file.mkdirRecurse(dir);
@@ -119,15 +119,15 @@ void buildIndex(string[] dirnames, const DirStructure[string] dirs, const S3Obje
 
 }
 
-void iterate(string[] dirnames, const ref DirStructure dir)
+void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
 {
     if (dir.name != "")
         dirnames ~= dir.name;
 
     foreach (k; dir.subdirs.keys.sort)
-        iterate(dirnames, dir.subdirs[k]);
+        iterate(basedir, dirnames, dir.subdirs[k]);
 
-    buildIndex(dirnames, dir.subdirs, dir.files);
+    buildIndex(basedir, dirnames, dir.subdirs, dir.files);
 }
 
 void main()
@@ -137,11 +137,11 @@ void main()
     auto a = new AWS;
     a.accessKey = c.aws_key;
     a.secretKey = c.aws_secret;
-    a.endpoint = "s3.amazonaws.com";
+    a.endpoint = c.aws_endpoint;
 
     auto s3 = new S3(a);
     auto s3bucket = new S3Bucket(s3);
-    s3bucket.name = "downloads.dlang.org";
+    s3bucket.name = c.s3_bucket;
 
     S3ListResults contents = listBucketContents(s3bucket);
 
@@ -150,7 +150,9 @@ void main()
 
     DirStructure dir = makeIntoDirStructure(contents);
 
-    iterate([], dir);
+    if (c.base_dir[$-1] != '/')
+        c.base_dir ~= "/";
+    iterate(c.base_dir, [], dir);
 }
 
 string genHeader()
