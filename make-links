@@ -2,8 +2,6 @@
 
 set -x
 
-basedir=/mnt/downloads.dlang.org
-ep=https://s3.amazonaws.com
 bucket=downloads.dlang.org
 extraargs="--acl public-read --cache-control max-age=604800"
 
@@ -13,41 +11,48 @@ function makelink
 {
     toplevel=${2%%/*}
     filename=`basename $2`
-    aws --output json --endpoint-url $ep s3 cp /dev/null s3://$bucket/$toplevel/${1:0:1}.x/$1/$filename $extraargs --website-redirect http://$bucket/$2
+    aws --output json --profile ddo s3 cp /tmp/zero-length-file s3://$bucket/$toplevel/${1:0:1}.x/$1/$filename $extraargs --website-redirect http://$bucket/$2
+
+#    cd /media/scratch/ddo
+#    mkdir -p /media/scratch/ddo/$toplevel/${1:0:1}.x/$1
+#    ln -s ../../../$2 /media/scratch/ddo/$toplevel/${1:0:1}.x/$1/$filename
 }
 
-makelink 2.067.0 releases/2015/dmd_2.067.0-0_amd64.deb
-makelink 2.067.0 releases/2015/dmd_2.067.0-0_amd64.deb.asc
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.i386.rpm
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.i386.rpm.asc
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.x86_64.rpm
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.x86_64.rpm.asc
-makelink 2.067.0 releases/2015/dmd_2.067.0-0_i386.deb
-makelink 2.067.0 releases/2015/dmd_2.067.0-0_i386.deb.asc
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.i386.rpm
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.i386.rpm.asc
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.x86_64.rpm
-makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.x86_64.rpm.asc
-makelink 2.067.0 releases/2015/dmd.2.067.0.dmg
-makelink 2.067.0 releases/2015/dmd.2.067.0.dmg.asc
-makelink 2.067.0 releases/2015/dmd-2.067.0.exe
-makelink 2.067.0 releases/2015/dmd-2.067.0.exe.asc
-makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-32.zip
-makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-32.zip.asc
-makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-64.zip
-makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-64.zip.asc
-makelink 2.067.0 releases/2015/dmd.2.067.0.linux.zip
-makelink 2.067.0 releases/2015/dmd.2.067.0.linux.zip.asc
-makelink 2.067.0 releases/2015/dmd.2.067.0.osx.zip
-makelink 2.067.0 releases/2015/dmd.2.067.0.osx.zip.asc
-makelink 2.067.0 releases/2015/dmd.2.067.0.windows.zip
-makelink 2.067.0 releases/2015/dmd.2.067.0.windows.zip.asc
-makelink 2.067.0 releases/2015/dmd.2.067.0.zip
-makelink 2.067.0 releases/2015/dmd.2.067.0.zip.asc
-makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_amd64.deb
-makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_amd64.deb.asc
-makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_i386.deb
-makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_i386.deb.asc
+rm /tmp/zero-length-file
+touch /tmp/zero-length-file
+
+# makelink 2.067.0 releases/2015/dmd_2.067.0-0_amd64.deb
+# makelink 2.067.0 releases/2015/dmd_2.067.0-0_amd64.deb.asc
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.i386.rpm
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.i386.rpm.asc
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.x86_64.rpm
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.x86_64.rpm.asc
+# makelink 2.067.0 releases/2015/dmd_2.067.0-0_i386.deb
+# makelink 2.067.0 releases/2015/dmd_2.067.0-0_i386.deb.asc
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.i386.rpm
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.i386.rpm.asc
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.x86_64.rpm
+# makelink 2.067.0 releases/2015/dmd-2.067.0-0.openSUSE.x86_64.rpm.asc
+# makelink 2.067.0 releases/2015/dmd.2.067.0.dmg
+# makelink 2.067.0 releases/2015/dmd.2.067.0.dmg.asc
+# makelink 2.067.0 releases/2015/dmd-2.067.0.exe
+# makelink 2.067.0 releases/2015/dmd-2.067.0.exe.asc
+# makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-32.zip
+# makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-32.zip.asc
+# makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-64.zip
+# makelink 2.067.0 releases/2015/dmd.2.067.0.freebsd-64.zip.asc
+# makelink 2.067.0 releases/2015/dmd.2.067.0.linux.zip
+# makelink 2.067.0 releases/2015/dmd.2.067.0.linux.zip.asc
+# makelink 2.067.0 releases/2015/dmd.2.067.0.osx.zip
+# makelink 2.067.0 releases/2015/dmd.2.067.0.osx.zip.asc
+# makelink 2.067.0 releases/2015/dmd.2.067.0.windows.zip
+# makelink 2.067.0 releases/2015/dmd.2.067.0.windows.zip.asc
+# makelink 2.067.0 releases/2015/dmd.2.067.0.zip
+# makelink 2.067.0 releases/2015/dmd.2.067.0.zip.asc
+# makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_amd64.deb
+# makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_amd64.deb.asc
+# makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_i386.deb
+# makelink 2.067.0 releases/2015/libphobos2-67_2.067.0-0_i386.deb.asc
 
 # makelink 2.067.0 pre-releases/2015/dmd_2.067.0~rc1-0_amd64.deb
 # makelink 2.067.0 pre-releases/2015/dmd_2.067.0~rc1-0_amd64.deb.asc
