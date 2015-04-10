@@ -4,10 +4,11 @@ bucket to be used as a website.
 
 It expects a config file in the form:
 
+```
 {
     "aws" : {
-        "key"    : "aws access key",
-        "secret" : "aws secret key",
+        "key"    : "<aws access key>",
+        "secret" : "<aws secret key>",
         "endpoint" : "s3-us-west-2.amazonaws.com"
     },
 
@@ -15,5 +16,5 @@ It expects a config file in the form:
 
     "base_dir" : "/media/scratch/ddo-upload"
 }
-
+```
 
