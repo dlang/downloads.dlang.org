@@ -27,7 +27,7 @@ void load_config(string filename)
     c.aws_secret = aws.object["secret"].str;
     c.aws_endpoint = aws.object["endpoint"].str;
 
-    c.s3_bucket = aws.object["s3bucket"].str;
+    c.s3_bucket = jv.object["s3bucket"].str;
 
     c.base_dir = jv.object["base_dir"].str;
 }
