@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -x
+
+basedir=/media/scratch/ddo-upload
+bucket=s3://downloads.dlang.org
+extraargs="--acl public-read --cache-control max-age=604800"
+
+aws --output json --profile ddo s3 sync $basedir/releases/     $bucket/releases/     $extraargs
+aws --output json --profile ddo s3 sync $basedir/pre-releases/ $bucket/pre-releases/ $extraargs
+aws --output json --profile ddo s3 sync $basedir/other/        $bucket/other/        $extraargs
+
+(cd ~ec2-user/downloads.dlang.org/ddo-tools/src; ./build-gen-index)
+
+aws --output json --profile ddo s3 cp   $basedir/index.html    $bucket/index.html    $extraargs
+aws --output json --profile ddo s3 sync $basedir/releases/     $bucket/releases/     $extraargs
+aws --output json --profile ddo s3 sync $basedir/pre-releases/ $bucket/pre-releases/ $extraargs
+aws --output json --profile ddo s3 sync $basedir/other/        $bucket/other/        $extraargs
+
