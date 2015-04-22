@@ -21,6 +21,39 @@ function makelink
 rm /tmp/zero-length-file
 touch /tmp/zero-length-file
 
+# makelink 2.067.1 pre-releases/2015/dmd_2.067.1~b1-0_amd64.deb
+# makelink 2.067.1 pre-releases/2015/dmd_2.067.1~b1-0_amd64.deb.asc
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.fedora.i386.rpm
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.fedora.i386.rpm.asc
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.fedora.x86_64.rpm
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.fedora.x86_64.rpm.asc
+# makelink 2.067.1 pre-releases/2015/dmd_2.067.1~b1-0_i386.deb
+# makelink 2.067.1 pre-releases/2015/dmd_2.067.1~b1-0_i386.deb.asc
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.openSUSE.i386.rpm
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.openSUSE.i386.rpm.asc
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.openSUSE.x86_64.rpm
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1~b1-0.openSUSE.x86_64.rpm.asc
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.dmg
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.dmg.asc
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1-b1.exe
+# makelink 2.067.1 pre-releases/2015/dmd-2.067.1-b1.exe.asc
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.freebsd-32.zip
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.freebsd-32.zip.asc
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.freebsd-64.zip
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.freebsd-64.zip.asc
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.linux.zip
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.linux.zip.asc
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.osx.zip
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.osx.zip.asc
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.windows.zip
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.windows.zip.asc
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.zip
+# makelink 2.067.1 pre-releases/2015/dmd.2.067.1-b1.zip.asc
+# makelink 2.067.1 pre-releases/2015/libphobos2-67_2.067.1~b1-0_amd64.deb
+# makelink 2.067.1 pre-releases/2015/libphobos2-67_2.067.1~b1-0_amd64.deb.asc
+# makelink 2.067.1 pre-releases/2015/libphobos2-67_2.067.1~b1-0_i386.deb
+# makelink 2.067.1 pre-releases/2015/libphobos2-67_2.067.1~b1-0_i386.deb.asc
+
 # makelink 2.067.0 releases/2015/dmd_2.067.0-0_amd64.deb
 # makelink 2.067.0 releases/2015/dmd_2.067.0-0_amd64.deb.asc
 # makelink 2.067.0 releases/2015/dmd-2.067.0-0.fedora.i386.rpm
@@ -120,12 +153,12 @@ touch /tmp/zero-length-file
 # makelink 2.067.0 pre-releases/2015/libphobos2-67_2.067.0~b4-0_i386.deb
 # makelink 2.067.0 pre-releases/2015/libphobos2-67_2.067.0~b4-0_i386.deb.asc
 # 
-# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b2.freebsd-32.zip
-# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b2.freebsd-64.zip
-# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b2.linux.zip
-# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b2.osx.zip
-# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b2.windows.zip
-# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b2.zip
+# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b3.freebsd-32.zip
+# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b3.freebsd-64.zip
+# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b3.linux.zip
+# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b3.osx.zip
+# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b3.windows.zip
+# makelink 2.067.0 pre-releases/2015/dmd.2.067.0-b3.zip
 # makelink 2.067.0 pre-releases/2015/dmd_2.067.0~b3-0_amd64.deb
 # makelink 2.067.0 pre-releases/2015/dmd_2.067.0~b3-0_amd64.deb.asc
 # makelink 2.067.0 pre-releases/2015/dmd-2.067.0~b3-0.fedora.i386.rpm
