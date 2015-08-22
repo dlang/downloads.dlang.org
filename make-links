@@ -21,6 +21,39 @@ function makelink
 rm /tmp/zero-length-file
 touch /tmp/zero-length-file
 
+# makelink 2.068.0 releases/2015/dmd_2.068.0-0_amd64.deb
+# makelink 2.068.0 releases/2015/dmd_2.068.0-0_amd64.deb.asc
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.fedora.i386.rpm
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.fedora.i386.rpm.asc
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.fedora.x86_64.rpm
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.fedora.x86_64.rpm.asc
+# makelink 2.068.0 releases/2015/dmd_2.068.0-0_i386.deb
+# makelink 2.068.0 releases/2015/dmd_2.068.0-0_i386.deb.asc
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.openSUSE.i386.rpm
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.openSUSE.i386.rpm.asc
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.openSUSE.x86_64.rpm
+# makelink 2.068.0 releases/2015/dmd-2.068.0-0.openSUSE.x86_64.rpm.asc
+# makelink 2.068.0 releases/2015/dmd.2.068.0.dmg
+# makelink 2.068.0 releases/2015/dmd.2.068.0.dmg.asc
+# makelink 2.068.0 releases/2015/dmd-2.068.0.exe
+# makelink 2.068.0 releases/2015/dmd-2.068.0.exe.asc
+# makelink 2.068.0 releases/2015/dmd.2.068.0.freebsd-32.zip
+# makelink 2.068.0 releases/2015/dmd.2.068.0.freebsd-32.zip.asc
+# makelink 2.068.0 releases/2015/dmd.2.068.0.freebsd-64.zip
+# makelink 2.068.0 releases/2015/dmd.2.068.0.freebsd-64.zip.asc
+# makelink 2.068.0 releases/2015/dmd.2.068.0.linux.zip
+# makelink 2.068.0 releases/2015/dmd.2.068.0.linux.zip.asc
+# makelink 2.068.0 releases/2015/dmd.2.068.0.osx.zip
+# makelink 2.068.0 releases/2015/dmd.2.068.0.osx.zip.asc
+# makelink 2.068.0 releases/2015/dmd.2.068.0.windows.zip
+# makelink 2.068.0 releases/2015/dmd.2.068.0.windows.zip.asc
+# makelink 2.068.0 releases/2015/dmd.2.068.0.zip
+# makelink 2.068.0 releases/2015/dmd.2.068.0.zip.asc
+# makelink 2.068.0 releases/2015/libphobos2-68_2.068.0-0_amd64.deb
+# makelink 2.068.0 releases/2015/libphobos2-68_2.068.0-0_amd64.deb.asc
+# makelink 2.068.0 releases/2015/libphobos2-68_2.068.0-0_i386.deb
+# makelink 2.068.0 releases/2015/libphobos2-68_2.068.0-0_i386.deb.asc
+
 # makelink 2.068.0 pre-releases/2015/dmd_2.068.0~rc1-0_amd64.deb
 # makelink 2.068.0 pre-releases/2015/dmd_2.068.0~rc1-0_amd64.deb.asc
 # makelink 2.068.0 pre-releases/2015/dmd-2.068.0~rc1-0.fedora.i386.rpm
