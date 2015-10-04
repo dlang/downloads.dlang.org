@@ -196,7 +196,7 @@ string genHeader()
         </form>
     </div>
     
-<div id="cssmenu"><ul>    <li><a href='http://dlang.org/'><span>D 2.068.1</span></a></li>
+<div id="cssmenu"><ul>    <li><a href='http://dlang.org/'><span>D 2.068.2</span></a></li>
     <li><a href='http://dlang.org/download.html'><span><b>Download</b></span></a></li>
     <li><a href='http://dlang.org/getstarted.html'><span>Getting Started</span></a></li>
     <li><a href='http://dlang.org/changelog.html'><span>Change Log</span></a></li>
