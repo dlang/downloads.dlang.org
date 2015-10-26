@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+set -xeo pipefail
 
 bucket=downloads.dlang.org
 extraargs="--acl public-read --cache-control max-age=604800"
