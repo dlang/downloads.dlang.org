@@ -18,7 +18,7 @@ function makelink
 #    ln -s ../../../$2 /media/scratch/ddo/$toplevel/${1:0:1}.x/$1/$filename
 }
 
-rm /tmp/zero-length-file
+rm -f /tmp/zero-length-file
 touch /tmp/zero-length-file
 
 makelink 2.069.0 releases/2015/dmd_2.069.0-0_amd64.deb
