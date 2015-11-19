@@ -21,48 +21,48 @@ function makelink
 rm -f /tmp/zero-length-file
 touch /tmp/zero-length-file
 
-makelink 2.069.1 releases/2015/dmd_2.069.1-0_amd64.deb
-makelink 2.069.1 releases/2015/dmd_2.069.1-0_amd64.deb.sig
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.i386.rpm
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.i386.rpm.sig
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.x86_64.rpm
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.x86_64.rpm.sig
-makelink 2.069.1 releases/2015/dmd_2.069.1-0_i386.deb
-makelink 2.069.1 releases/2015/dmd_2.069.1-0_i386.deb.sig
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.i386.rpm
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.i386.rpm.sig
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.x86_64.rpm
-makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.x86_64.rpm.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.dmg
-makelink 2.069.1 releases/2015/dmd.2.069.1.dmg.sig
-makelink 2.069.1 releases/2015/dmd-2.069.1.exe
-makelink 2.069.1 releases/2015/dmd-2.069.1.exe.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.tar.xz
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.tar.xz.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.zip
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.zip.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.tar.xz
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.tar.xz.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.zip
-makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.zip.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.linux.tar.xz
-makelink 2.069.1 releases/2015/dmd.2.069.1.linux.tar.xz.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.linux.zip
-makelink 2.069.1 releases/2015/dmd.2.069.1.linux.zip.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.osx.tar.xz
-makelink 2.069.1 releases/2015/dmd.2.069.1.osx.tar.xz.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.osx.zip
-makelink 2.069.1 releases/2015/dmd.2.069.1.osx.zip.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.windows.7z
-makelink 2.069.1 releases/2015/dmd.2.069.1.windows.7z.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.windows.zip
-makelink 2.069.1 releases/2015/dmd.2.069.1.windows.zip.sig
-makelink 2.069.1 releases/2015/dmd.2.069.1.zip
-makelink 2.069.1 releases/2015/dmd.2.069.1.zip.sig
-makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_amd64.deb
-makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_amd64.deb.sig
-makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_i386.deb
-makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_i386.deb.sig
+# makelink 2.069.1 releases/2015/dmd_2.069.1-0_amd64.deb
+# makelink 2.069.1 releases/2015/dmd_2.069.1-0_amd64.deb.sig
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.i386.rpm
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.i386.rpm.sig
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.x86_64.rpm
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.fedora.x86_64.rpm.sig
+# makelink 2.069.1 releases/2015/dmd_2.069.1-0_i386.deb
+# makelink 2.069.1 releases/2015/dmd_2.069.1-0_i386.deb.sig
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.i386.rpm
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.i386.rpm.sig
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.x86_64.rpm
+# makelink 2.069.1 releases/2015/dmd-2.069.1-0.openSUSE.x86_64.rpm.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.dmg
+# makelink 2.069.1 releases/2015/dmd.2.069.1.dmg.sig
+# makelink 2.069.1 releases/2015/dmd-2.069.1.exe
+# makelink 2.069.1 releases/2015/dmd-2.069.1.exe.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.tar.xz
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.tar.xz.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.zip
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-32.zip.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.tar.xz
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.tar.xz.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.zip
+# makelink 2.069.1 releases/2015/dmd.2.069.1.freebsd-64.zip.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.linux.tar.xz
+# makelink 2.069.1 releases/2015/dmd.2.069.1.linux.tar.xz.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.linux.zip
+# makelink 2.069.1 releases/2015/dmd.2.069.1.linux.zip.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.osx.tar.xz
+# makelink 2.069.1 releases/2015/dmd.2.069.1.osx.tar.xz.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.osx.zip
+# makelink 2.069.1 releases/2015/dmd.2.069.1.osx.zip.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.windows.7z
+# makelink 2.069.1 releases/2015/dmd.2.069.1.windows.7z.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.windows.zip
+# makelink 2.069.1 releases/2015/dmd.2.069.1.windows.zip.sig
+# makelink 2.069.1 releases/2015/dmd.2.069.1.zip
+# makelink 2.069.1 releases/2015/dmd.2.069.1.zip.sig
+# makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_amd64.deb
+# makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_amd64.deb.sig
+# makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_i386.deb
+# makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_i386.deb.sig
 
 # makelink 2.069.0 releases/2015/dmd_2.069.0-0_amd64.deb
 # makelink 2.069.0 releases/2015/dmd_2.069.0-0_amd64.deb.sig
@@ -1530,51 +1530,100 @@ makelink 2.069.1 releases/2015/libphobos2-69_2.069.1-0_i386.deb.sig
 # makelink 2.064 releases/2013/dmd.2.064.zip
 # makelink 2.064 releases/2013/libphobos2-64_2.064.2-0_amd64.deb
 # makelink 2.064 releases/2013/libphobos2-64_2.064.2-0_i386.deb
+
 # makelink 2.065.0 releases/2014/dmd_2.065.0-0_amd64.deb
+# makelink 2.065.0 releases/2014/dmd_2.065.0-0_amd64.deb.sig
 # makelink 2.065.0 releases/2014/dmd-2.065.0-0.fedora.i386.rpm
+# makelink 2.065.0 releases/2014/dmd-2.065.0-0.fedora.i386.rpm.sig
 # makelink 2.065.0 releases/2014/dmd-2.065.0-0.fedora.x86_64.rpm
+# makelink 2.065.0 releases/2014/dmd-2.065.0-0.fedora.x86_64.rpm.sig
 # makelink 2.065.0 releases/2014/dmd_2.065.0-0_i386.deb
+# makelink 2.065.0 releases/2014/dmd_2.065.0-0_i386.deb.sig
 # makelink 2.065.0 releases/2014/dmd-2.065.0-0.openSUSE.i386.rpm
+# makelink 2.065.0 releases/2014/dmd-2.065.0-0.openSUSE.i386.rpm.sig
 # makelink 2.065.0 releases/2014/dmd-2.065.0-0.openSUSE.x86_64.rpm
+# makelink 2.065.0 releases/2014/dmd-2.065.0-0.openSUSE.x86_64.rpm.sig
 # makelink 2.065.0 releases/2014/dmd.2.065.0.dmg
+# makelink 2.065.0 releases/2014/dmd.2.065.0.dmg.sig
 # makelink 2.065.0 releases/2014/dmd-2.065.0.exe
+# makelink 2.065.0 releases/2014/dmd-2.065.0.exe.sig
 # makelink 2.065.0 releases/2014/dmd.2.065.0.freebsd-32.zip
+# makelink 2.065.0 releases/2014/dmd.2.065.0.freebsd-32.zip.sig
 # makelink 2.065.0 releases/2014/dmd.2.065.0.freebsd-64.zip
+# makelink 2.065.0 releases/2014/dmd.2.065.0.freebsd-64.zip.sig
 # makelink 2.065.0 releases/2014/dmd.2.065.0.linux.zip
+# makelink 2.065.0 releases/2014/dmd.2.065.0.linux.zip.sig
 # makelink 2.065.0 releases/2014/dmd.2.065.0.osx.zip
+# makelink 2.065.0 releases/2014/dmd.2.065.0.osx.zip.sig
 # makelink 2.065.0 releases/2014/dmd.2.065.0.windows.zip
+# makelink 2.065.0 releases/2014/dmd.2.065.0.windows.zip.sig
 # makelink 2.065.0 releases/2014/dmd.2.065.0.zip
+# makelink 2.065.0 releases/2014/dmd.2.065.0.zip.sig
 # makelink 2.065.0 releases/2014/libphobos2-65_2.065.0-0_amd64.deb
+# makelink 2.065.0 releases/2014/libphobos2-65_2.065.0-0_amd64.deb.sig
 # makelink 2.065.0 releases/2014/libphobos2-65_2.065.0-0_i386.deb
+# makelink 2.065.0 releases/2014/libphobos2-65_2.065.0-0_i386.deb.sig
 # makelink 2.066.0 releases/2014/dmd_2.066.0-0_amd64.deb
+# makelink 2.066.0 releases/2014/dmd_2.066.0-0_amd64.deb.sig
 # makelink 2.066.0 releases/2014/dmd-2.066.0-0.fedora.i386.rpm
+# makelink 2.066.0 releases/2014/dmd-2.066.0-0.fedora.i386.rpm.sig
 # makelink 2.066.0 releases/2014/dmd-2.066.0-0.fedora.x86_64.rpm
+# makelink 2.066.0 releases/2014/dmd-2.066.0-0.fedora.x86_64.rpm.sig
 # makelink 2.066.0 releases/2014/dmd_2.066.0-0_i386.deb
+# makelink 2.066.0 releases/2014/dmd_2.066.0-0_i386.deb.sig
 # makelink 2.066.0 releases/2014/dmd-2.066.0-0.openSUSE.i386.rpm
+# makelink 2.066.0 releases/2014/dmd-2.066.0-0.openSUSE.i386.rpm.sig
 # makelink 2.066.0 releases/2014/dmd-2.066.0-0.openSUSE.x86_64.rpm
+# makelink 2.066.0 releases/2014/dmd-2.066.0-0.openSUSE.x86_64.rpm.sig
 # makelink 2.066.0 releases/2014/dmd.2.066.0.dmg
+# makelink 2.066.0 releases/2014/dmd.2.066.0.dmg.sig
 # makelink 2.066.0 releases/2014/dmd-2.066.0.exe
+# makelink 2.066.0 releases/2014/dmd-2.066.0.exe.sig
 # makelink 2.066.0 releases/2014/dmd.2.066.0.freebsd-32.zip
+# makelink 2.066.0 releases/2014/dmd.2.066.0.freebsd-32.zip.sig
 # makelink 2.066.0 releases/2014/dmd.2.066.0.freebsd-64.zip
+# makelink 2.066.0 releases/2014/dmd.2.066.0.freebsd-64.zip.sig
 # makelink 2.066.0 releases/2014/dmd.2.066.0.linux.zip
+# makelink 2.066.0 releases/2014/dmd.2.066.0.linux.zip.sig
 # makelink 2.066.0 releases/2014/dmd.2.066.0.osx.zip
+# makelink 2.066.0 releases/2014/dmd.2.066.0.osx.zip.sig
 # makelink 2.066.0 releases/2014/dmd.2.066.0.windows.zip
+# makelink 2.066.0 releases/2014/dmd.2.066.0.windows.zip.sig
 # makelink 2.066.0 releases/2014/dmd.2.066.0.zip
+# makelink 2.066.0 releases/2014/dmd.2.066.0.zip.sig
 # makelink 2.066.0 releases/2014/libphobos2-66_2.066.0-0_amd64.deb
+# makelink 2.066.0 releases/2014/libphobos2-66_2.066.0-0_amd64.deb.sig
 # makelink 2.066.0 releases/2014/libphobos2-66_2.066.0-0_i386.deb
+# makelink 2.066.0 releases/2014/libphobos2-66_2.066.0-0_i386.deb.sig
 # makelink 2.066.1 releases/2014/dmd_2.066.1-0_amd64.deb
+# makelink 2.066.1 releases/2014/dmd_2.066.1-0_amd64.deb.sig
 # makelink 2.066.1 releases/2014/dmd-2.066.1-0.fedora.i386.rpm
+# makelink 2.066.1 releases/2014/dmd-2.066.1-0.fedora.i386.rpm.sig
 # makelink 2.066.1 releases/2014/dmd-2.066.1-0.fedora.x86_64.rpm
+# makelink 2.066.1 releases/2014/dmd-2.066.1-0.fedora.x86_64.rpm.sig
 # makelink 2.066.1 releases/2014/dmd_2.066.1-0_i386.deb
+# makelink 2.066.1 releases/2014/dmd_2.066.1-0_i386.deb.sig
 # makelink 2.066.1 releases/2014/dmd-2.066.1-0.openSUSE.i386.rpm
+# makelink 2.066.1 releases/2014/dmd-2.066.1-0.openSUSE.i386.rpm.sig
 # makelink 2.066.1 releases/2014/dmd-2.066.1-0.openSUSE.x86_64.rpm
+# makelink 2.066.1 releases/2014/dmd-2.066.1-0.openSUSE.x86_64.rpm.sig
 # makelink 2.066.1 releases/2014/dmd.2.066.1.dmg
+# makelink 2.066.1 releases/2014/dmd.2.066.1.dmg.sig
 # makelink 2.066.1 releases/2014/dmd-2.066.1.exe
+# makelink 2.066.1 releases/2014/dmd-2.066.1.exe.sig
 # makelink 2.066.1 releases/2014/dmd.2.066.1.freebsd-32.zip
+# makelink 2.066.1 releases/2014/dmd.2.066.1.freebsd-32.zip.sig
 # makelink 2.066.1 releases/2014/dmd.2.066.1.freebsd-64.zip
+# makelink 2.066.1 releases/2014/dmd.2.066.1.freebsd-64.zip.sig
 # makelink 2.066.1 releases/2014/dmd.2.066.1.linux.zip
+# makelink 2.066.1 releases/2014/dmd.2.066.1.linux.zip.sig
 # makelink 2.066.1 releases/2014/dmd.2.066.1.osx.zip
+# makelink 2.066.1 releases/2014/dmd.2.066.1.osx.zip.sig
 # makelink 2.066.1 releases/2014/dmd.2.066.1.windows.zip
+# makelink 2.066.1 releases/2014/dmd.2.066.1.windows.zip.sig
 # makelink 2.066.1 releases/2014/dmd.2.066.1.zip
+# makelink 2.066.1 releases/2014/dmd.2.066.1.zip.sig
 # makelink 2.066.1 releases/2014/libphobos2-66_2.066.1-0_amd64.deb
+# makelink 2.066.1 releases/2014/libphobos2-66_2.066.1-0_amd64.deb.sig
 # makelink 2.066.1 releases/2014/libphobos2-66_2.066.1-0_i386.deb
+# makelink 2.066.1 releases/2014/libphobos2-66_2.066.1-0_i386.deb.sig
