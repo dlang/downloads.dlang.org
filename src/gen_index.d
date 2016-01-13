@@ -130,7 +130,7 @@ void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
 
 void main()
 {
-    load_config("config.json");
+    auto c = load_config("config.json");
 
     auto a = new AWS;
     a.accessKey = c.aws_key;
