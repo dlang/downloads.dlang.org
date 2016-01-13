@@ -15,7 +15,6 @@ enum urlprefix = "";
 struct DirStructure
 {
     string               name;
-    DirStructure*        parent;
     S3Object[string]     files;   // map of filename -> S3Object, filename doesn't have directory prefixes
     DirStructure[string] subdirs; // map of dirname -> DirStructure, similar to files
 }
@@ -36,7 +35,6 @@ DirStructure makeIntoDirStructure(S3ListResults contents)
             {
                 curdir.subdirs[name] = DirStructure();
                 nextdir = name in curdir.subdirs;
-                nextdir.parent = curdir;
                 nextdir.name   = name;
 
                 // check to see if a dummy directory object was added as a file
