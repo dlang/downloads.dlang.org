@@ -15,7 +15,7 @@ enum urlprefix = "";
 struct DirStructure
 {
     string               name;
-    S3Object[string]     files;   // map of filename -> S3Object, filename doesn't have directory prefixes
+    bool[string]         files;   // set of filenames, filename doesn't have directory prefixes
     DirStructure[string] subdirs; // map of dirname -> DirStructure, similar to files
 }
 
@@ -48,7 +48,7 @@ DirStructure makeIntoDirStructure(S3ListResults contents)
         // the s3sync tool creates objects that we want to ignore
         // also, the index.html files shouldn't be listed as files
         if (filename.length && !(filename in dir.subdirs) && (filename != "index.html"))
-            curdir.files[filename] = obj;
+            curdir.files[filename] = true;
     }
 
     return dir;
@@ -70,7 +70,7 @@ string dirlinks(string[] dirnames)
     return result;
 }
 
-void buildIndex(string basedir, string[] dirnames, const DirStructure[string] dirs, const S3Object[string] files)
+void buildIndex(string basedir, string[] dirnames, const DirStructure[string] dirs, const bool[string] files)
 {
     writefln("dirnames: %s", dirnames);
     string joined = "/" ~ join(dirnames, "/");
