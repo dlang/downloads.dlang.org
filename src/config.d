@@ -10,8 +10,6 @@ struct Config
     string aws_endpoint;
 
     string s3_bucket;
-
-    string base_dir;
 }
 
 
@@ -28,8 +26,6 @@ Config load_config(string filename)
     c.aws_endpoint = aws.object["endpoint"].str;
 
     c.s3_bucket = jv.object["s3bucket"].str;
-
-    c.base_dir = jv.object["base_dir"].str;
     return c;
 }
 

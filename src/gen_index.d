@@ -1,6 +1,7 @@
 module gen_index;
 
 import file = std.file;
+import std.json;
 import std.string;
 import std.stdio;
 
@@ -51,6 +52,35 @@ DirStructure makeIntoDirStructure(S3ListResults contents)
             curdir.files[filename] = true;
     }
 
+    return dir;
+}
+
+JSONValue toJSON(DirStructure dir)
+{
+    JSONValue res;
+    res["name"] = dir.name;
+    res["files"] = JSONValue(dir.files.keys);
+    if (dir.subdirs)
+    {
+        JSONValue subdirs;
+        foreach (k, v; dir.subdirs)
+            subdirs[k] = toJSON(v);
+        res["subdirs"] = subdirs;
+    }
+    return res;
+}
+
+DirStructure fromJSON(JSONValue json)
+{
+    DirStructure dir;
+    dir.name = json["name"].str;
+    foreach (v; json["files"].array)
+        dir.files[v.str] = true;
+    if (auto p = "subdirs" in json.object)
+    {
+        foreach (k, v; p.object)
+            dir.subdirs[k] = fromJSON(v);
+    }
     return dir;
 }
 
@@ -128,7 +158,7 @@ void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
     buildIndex(basedir, dirnames, dir.subdirs, dir.files);
 }
 
-void main()
+S3Bucket getBucket()
 {
     auto c = load_config("config.json");
 
@@ -140,17 +170,41 @@ void main()
     auto s3 = new S3(a);
     auto s3bucket = new S3Bucket(s3);
     s3bucket.name = c.s3_bucket;
+    return s3bucket;
+}
 
-    S3ListResults contents = listBucketContents(s3bucket);
+int main(string args[])
+{
+    if (args.length < 2)
+    {
+        stderr.writeln("Missing commands (index, and/or generate)");
+        return -1;
+    }
 
+    auto jsonPath = "index.json";
+    auto outputPath = "./ddo/";
+    foreach (command; args[1 .. $])
+    {
+        switch (command)
+        {
+        case "index":
+            if (file.exists(jsonPath))
+                file.remove(jsonPath); // remove stale data
+            auto s3bucket = getBucket();
+            auto dir = listBucketContents(s3bucket).makeIntoDirStructure();
+            file.write(jsonPath, toJSON(dir).toPrettyString);
+            break;
 
-    //writeln("contents: ", contents);
+        case "generate":
+            auto dir = fromJSON(file.readText(jsonPath).parseJSON);
+            iterate(outputPath, [], dir);
+            break;
 
-    DirStructure dir = makeIntoDirStructure(contents);
-
-    if (c.base_dir[$-1] != '/')
-        c.base_dir ~= "/";
-    iterate(c.base_dir, [], dir);
+        default:
+            assert(0, "Unknown command "~command);
+        }
+    }
+    return 0;
 }
 
 string genHeader()
