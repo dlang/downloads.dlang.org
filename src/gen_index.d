@@ -15,7 +15,6 @@ enum urlprefix = "";
 
 struct DirStructure
 {
-    string               name;
     bool[string]         files;   // set of filenames, filename doesn't have directory prefixes
     DirStructure[string] subdirs; // map of dirname -> DirStructure, similar to files
 }
@@ -36,7 +35,6 @@ DirStructure makeIntoDirStructure(S3ListResults contents)
             {
                 curdir.subdirs[name] = DirStructure();
                 nextdir = name in curdir.subdirs;
-                nextdir.name   = name;
 
                 // check to see if a dummy directory object was added as a file
                 if (name in curdir.files)
@@ -58,7 +56,6 @@ DirStructure makeIntoDirStructure(S3ListResults contents)
 JSONValue toJSON(DirStructure dir)
 {
     JSONValue res;
-    res["name"] = dir.name;
     res["files"] = JSONValue(dir.files.keys);
     if (dir.subdirs)
     {
@@ -73,7 +70,6 @@ JSONValue toJSON(DirStructure dir)
 DirStructure fromJSON(JSONValue json)
 {
     DirStructure dir;
-    dir.name = json["name"].str;
     foreach (v; json["files"].array)
         dir.files[v.str] = true;
     if (auto p = "subdirs" in json.object)
@@ -149,11 +145,8 @@ void buildIndex(string basedir, string[] dirnames, const DirStructure[string] di
 
 void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
 {
-    if (dir.name != "")
-        dirnames ~= dir.name;
-
-    foreach (k; dir.subdirs.keys.sort)
-        iterate(basedir, dirnames, dir.subdirs[k]);
+    foreach (name; dir.subdirs.keys.sort)
+        iterate(basedir, dirnames ~ name, dir.subdirs[name]);
 
     buildIndex(basedir, dirnames, dir.subdirs, dir.files);
 }
