@@ -186,7 +186,7 @@ int main(string args[])
             if (file.exists(jsonPath))
                 file.remove(jsonPath); // remove stale data
             auto dir = getBucket()
-                .listBucketContents[]
+                .listBucketContents
                 .map!(o => o.key)
                 .makeIntoDirStructure();
             file.write(jsonPath, toJSON(dir).toPrettyString);
