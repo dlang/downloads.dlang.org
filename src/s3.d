@@ -212,11 +212,6 @@ class S3ListResults
 
     this(const S3Bucket b) { bucket = b; }
 
-    S3ListResultsContentsRange opSlice()
-    {
-        return S3ListResultsContentsRange(this);
-    }
-
     void followNextMarker()
     {
         string[string] queryArgs;
@@ -369,7 +364,7 @@ class S3Object
     }
 }
 
-S3ListResults listBucketContents(const S3Bucket bucket, string prefix = null, string delimiter = null)
+S3ListResultsContentsRange listBucketContents(const S3Bucket bucket, string prefix = null, string delimiter = null)
 {
     auto results = new S3ListResults(bucket);
 
@@ -379,7 +374,7 @@ S3ListResults listBucketContents(const S3Bucket bucket, string prefix = null, st
 
     results.followNextMarker;
 
-    return results;
+    return S3ListResultsContentsRange(results);
 }
 
 class S3Bucket

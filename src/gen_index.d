@@ -1,6 +1,8 @@
 module gen_index;
 
 import file = std.file;
+import std.algorithm;
+import std.file;
 import std.json;
 import std.string;
 import std.stdio;
@@ -19,13 +21,13 @@ struct DirStructure
     DirStructure[string] subdirs; // map of dirname -> DirStructure, similar to files
 }
 
-DirStructure makeIntoDirStructure(S3ListResults contents)
+DirStructure makeIntoDirStructure(R)(R paths)
 {
     DirStructure dir;
 
-    foreach(obj; contents[])
+    foreach(path; paths)
     {
-        string[] nameparts = split(obj.key, "/");
+        string[] nameparts = split(path, "/");
 
         DirStructure * curdir  = &dir;
         foreach(name; nameparts[0 .. $-1])
@@ -176,15 +178,28 @@ int main(string args[])
 
     auto jsonPath = "index.json";
     auto outputPath = "./ddo/";
-    foreach (command; args[1 .. $])
+    foreach (ref idx, command; args[1 .. $])
     {
         switch (command)
         {
-        case "index":
+        case "s3_index":
             if (file.exists(jsonPath))
                 file.remove(jsonPath); // remove stale data
-            auto s3bucket = getBucket();
-            auto dir = listBucketContents(s3bucket).makeIntoDirStructure();
+            auto dir = getBucket()
+                .listBucketContents
+                .map!(o => o.key)
+                .makeIntoDirStructure();
+            file.write(jsonPath, toJSON(dir).toPrettyString);
+            break;
+
+        case "folder_index":
+            if (file.exists(jsonPath))
+                file.remove(jsonPath); // remove stale data
+            auto path = args[1 + ++idx].chomp("/") ~ "/";
+            auto dir = dirEntries(path, SpanMode.breadth)
+                .filter!(de => de.isFile)
+                .map!(de => de.name.chompPrefix(path))
+                .makeIntoDirStructure();
             file.write(jsonPath, toJSON(dir).toPrettyString);
             break;
 
