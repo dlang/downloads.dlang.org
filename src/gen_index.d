@@ -233,16 +233,16 @@ string genHeader()
 <meta name="description" content="D Programming Language">
 <title>Release Archive - D Programming Language</title>
 
-<link rel="stylesheet" href="http://dlang.org/css/codemirror.css">
-<link rel="stylesheet" href="http://dlang.org/css/style.css">
-<link rel="stylesheet" href="http://dlang.org/css/print.css" media="print">
-<link rel="shortcut icon" href="http://dlang.org/favicon.ico">
+<link rel="stylesheet" href="//dlang.org/css/codemirror.css">
+<link rel="stylesheet" href="//dlang.org/css/style.css">
+<link rel="stylesheet" href="//dlang.org/css/print.css" media="print">
+<link rel="shortcut icon" href="//dlang.org/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=10.0">
 
 </head>
 <body id='ReleaseArchive'>
 <script type="text/javascript">document.body.className += ' have-javascript'</script>
-<div id="top"><div class="helper"><div class="helper expand-container">    <div class="logo"><a href="http://dlang.org"><img id="logo" alt="D Logo" src="http://dlang.org/images/dlogo.svg"></a></div>
+<div id="top"><div class="helper"><div class="helper expand-container">    <div class="logo"><a href="http://dlang.org"><img id="logo" alt="D Logo" src="//dlang.org/images/dlogo.svg"></a></div>
     <a href="http://dlang.org/menu.html" title="Menu" class="hamburger expand-toggle"><span>Menu</span></a>
     
 <div id="cssmenu"><ul>    <li><a href='http://dlang.org/getstarted.html'><span>Learn</span></a></li>
@@ -263,7 +263,7 @@ string genHeader()
 </ul></div>
     <div class="search-container expand-container">        <a href="http://dlang.org/search.html" class="expand-toggle" title="Search"><span>Search</span></a>
         
-    <div id="search-box">        <form method="get" action="http://google.com/search">
+    <div id="search-box">        <form method="get" action="//google.com/search">
             <input type="hidden" id="domains" name="domains" value="dlang.org">
             <input type="hidden" id="sourceid" name="sourceid" value="google-search">
             <span id="search-query"><input id="q" name="q" placeholder="Search"></span><span id="search-dropdown"><span class="helper">                <select id="sitesearch" name="sitesearch" size="1">
@@ -292,7 +292,7 @@ string genFooter()
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript">window.jQuery || document.write('\x3Cscript src="js/jquery-1.7.2.min.js">\x3C/script>');</script>
-    <script type="text/javascript" src="http://dlang.org/js/dlang.js"></script>
+    <script type="text/javascript" src="//dlang.org/js/dlang.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </body>
