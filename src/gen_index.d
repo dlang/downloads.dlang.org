@@ -254,7 +254,7 @@ string genHeader()
     <li><a href='http://code.dlang.org'><span>Packages</span></a></li>
     <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/community.html'><span>Community</span></a>
       
-<ul class='expand-content'><li><a href='http://dlang.org/bugstats.php'>Bug Tracker</a></li><li><a href='    http://forum.dlang.org'>Forums</a></li><li><a href='    irc://irc.freenode.net/d'>IRC</a></li><li><a href='    http://github.com/D-Programming-Language'>D on GitHub</a></li><li><a href='    http://wiki.dlang.org'>Wiki</a></li><li><a href='    http://wiki.dlang.org/Review_Queue'>Review Queue</a></li><li><a href='    http://twitter.com/search?q=%23dlang'>Twitter</a></li><li><a href='    http://digitalmars.com/d/dlinks.html'>More Links
+<ul class='expand-content'><li><a href='http://dlang.org/bugstats.php'>Bug Tracker</a></li><li><a href='    http://forum.dlang.org'>Forums</a></li><li><a href='    irc://irc.freenode.net/d'>IRC</a></li><li><a href='    http://github.com/dlang'>D on GitHub</a></li><li><a href='    http://wiki.dlang.org'>Wiki</a></li><li><a href='    http://wiki.dlang.org/Review_Queue'>Review Queue</a></li><li><a href='    http://twitter.com/search?q=%23dlang'>Twitter</a></li><li><a href='    http://digitalmars.com/d/dlinks.html'>More Links
 </a></li></ul></li>
     <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/resources.html'><span>Resources</span></a>
       
