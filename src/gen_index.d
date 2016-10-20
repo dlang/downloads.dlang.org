@@ -196,7 +196,8 @@ int main(string args[])
             if (file.exists(jsonPath))
                 file.remove(jsonPath); // remove stale data
             auto path = args[1 + ++idx].chomp("/") ~ "/";
-            auto dir = dirEntries(path, SpanMode.breadth)
+            enum followSymlink = true;
+            auto dir = dirEntries(path, SpanMode.breadth, !followSymlink)
                 .filter!(de => de.isFile)
                 .map!(de => de.name.chompPrefix(path))
                 .makeIntoDirStructure();
