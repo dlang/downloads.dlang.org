@@ -55,6 +55,7 @@ string urlEncode(string url, bool all = false)
 
 string canonicalizedAmzHeaders(string[string] headers)
 {
+    import std.algorithm : sort;
     import std.string : toLower, startsWith, strip;
 
     string[string] interesting_headers;
@@ -68,7 +69,7 @@ string canonicalizedAmzHeaders(string[string] headers)
 
     string result;
 
-    foreach(key; interesting_headers.keys.sort)
+    foreach(key; interesting_headers.keys.sort())
         result ~= key ~ ":" ~ headers[key] ~ "\n";
 
     return result;

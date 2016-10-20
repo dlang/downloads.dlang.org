@@ -100,6 +100,8 @@ string dirlinks(string[] dirnames)
 
 void buildIndex(string basedir, string[] dirnames, const DirStructure[string] dirs, const bool[string] files)
 {
+    import std.range : retro;
+
     writefln("dirnames: %s", dirnames);
     string joined = "/" ~ join(dirnames, "/");
     joined = (joined != "/" ? (joined ~ "/") : "");
@@ -116,7 +118,7 @@ void buildIndex(string basedir, string[] dirnames, const DirStructure[string] di
     page ~= "<h2>" ~ dirlinks(dirnames) ~ "</h2>\n";
 
     page ~= "Subdirectories:<br>\n<ul>\n";
-    foreach (k; dirs.keys.sort.reverse)
+    foreach (k; dirs.keys.sort().retro)
     {
         string filehtml;
 
@@ -128,7 +130,7 @@ void buildIndex(string basedir, string[] dirnames, const DirStructure[string] di
     page ~= "</ul>\n";
 
     page ~= "Files:<br>\n<ul>\n";
-    foreach (k; files.keys.sort.reverse)
+    foreach (k; files.keys.sort().retro)
     {
         string filehtml;
 
@@ -147,7 +149,7 @@ void buildIndex(string basedir, string[] dirnames, const DirStructure[string] di
 
 void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
 {
-    foreach (name; dir.subdirs.keys.sort)
+    foreach (name; dir.subdirs.keys.sort())
         iterate(basedir, dirnames ~ name, dir.subdirs[name]);
 
     buildIndex(basedir, dirnames, dir.subdirs, dir.files);
@@ -168,7 +170,7 @@ S3Bucket getBucket()
     return s3bucket;
 }
 
-int main(string args[])
+int main(string[] args)
 {
     if (args.length < 2)
     {

@@ -27,7 +27,7 @@ class AWS
 string buildQueryString(const ref AWS aws, const(char)[] httpVerb, const(char)[] requestURI, string[string] params)
 {
     auto expires = (Clock.currTime(UTC()) + dur!"minutes"(10)); // set expiration for now + 10 minutes
-    expires.fracSec(FracSec.from!"msecs"(0)); // aws doesn't want fractions of a second, so get rid of them
+    expires.fracSecs = 0.msecs; // aws doesn't want fractions of a second, so get rid of them
 
     params["AWSAccessKeyId"]   = aws.accessKey;
     params["Expires"]          = expires.toISOExtString();
@@ -65,10 +65,12 @@ string wrap_curl_escape(string s)
 
 private string cannonicalizeQueryString(const ref string[string] params)
 {
+    import std.algorithm : sort;
+
     auto output = "";
     auto first = true;
 
-    foreach (s; params.keys.sort)
+    foreach (s; params.keys.sort())
     {
         if (!first)
             output ~= "&";
@@ -106,7 +108,7 @@ string calculateHmacSHA256(string secret, const(char)[] data)
     ubyte* dataPtr = cast(ubyte*)data.ptr;
     size_t dataLen = to!size_t(data.length);
 
-    ubyte result[EVP_MAX_MD_SIZE];
+    ubyte[EVP_MAX_MD_SIZE] result;
     uint  resultLen = result.length;
 
     ubyte* rc = HMAC(EVP_sha256(), keyPtr, keyLen, dataPtr, dataLen, result.ptr, &resultLen);
@@ -122,7 +124,7 @@ string calculateHmacSHA1(string secret, const(char)[] data)
     ubyte* dataPtr = cast(ubyte*)data.ptr;
     size_t dataLen = to!size_t(data.length);
 
-    ubyte result[EVP_MAX_MD_SIZE];
+    ubyte[EVP_MAX_MD_SIZE] result;
     uint  resultLen = result.length;
 
     ubyte* rc = HMAC(EVP_sha1(), keyPtr, keyLen, dataPtr, dataLen, result.ptr, &resultLen);
