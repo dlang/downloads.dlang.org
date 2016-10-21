@@ -17,17 +17,20 @@ enum urlprefix = "";
 
 struct DirStructure
 {
+    bool isSymlink; // directory is a symlink to another dir
     bool[string]         files;   // set of filenames, filename doesn't have directory prefixes
     DirStructure[string] subdirs; // map of dirname -> DirStructure, similar to files
 }
 
-DirStructure makeIntoDirStructure(R)(R paths)
+enum SymlinkDir = DirStructure(true);
+
+DirStructure makeIntoDirStructure(R)(R entries)
 {
     DirStructure dir;
 
-    foreach(path; paths)
+    foreach(entry; entries)
     {
-        string[] nameparts = split(path, "/");
+        string[] nameparts = split(entry.path, "/");
 
         DirStructure * curdir  = &dir;
         foreach(name; nameparts[0 .. $-1])
@@ -46,9 +49,11 @@ DirStructure makeIntoDirStructure(R)(R paths)
         }
         string filename = nameparts[$-1];
 
+        if (entry.isSymlinkDir)
+            curdir.subdirs[filename] = SymlinkDir;
         // the s3sync tool creates objects that we want to ignore
         // also, the index.html files shouldn't be listed as files
-        if (filename.length && !(filename in dir.subdirs) && (filename != "index.html"))
+        else if (filename.length && !(filename in dir.subdirs) && (filename != "index.html"))
             curdir.files[filename] = true;
     }
 
@@ -63,7 +68,7 @@ JSONValue toJSON(DirStructure dir)
     {
         JSONValue subdirs;
         foreach (k, v; dir.subdirs)
-            subdirs[k] = toJSON(v);
+            subdirs[k] = v.isSymlink ? JSONValue(null) : toJSON(v);
         res["subdirs"] = subdirs;
     }
     return res;
@@ -77,7 +82,7 @@ DirStructure fromJSON(JSONValue json)
     if (auto p = "subdirs" in json.object)
     {
         foreach (k, v; p.object)
-            dir.subdirs[k] = fromJSON(v);
+            dir.subdirs[k] = v.isNull ? SymlinkDir : fromJSON(v);
     }
     return dir;
 }
@@ -150,7 +155,11 @@ void buildIndex(string basedir, string[] dirnames, const DirStructure[string] di
 void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
 {
     foreach (name; dir.subdirs.keys.sort())
-        iterate(basedir, dirnames ~ name, dir.subdirs[name]);
+    {
+        auto subdir = dir.subdirs[name];
+        if (!subdir.isSymlink)
+            iterate(basedir, dirnames ~ name, dir.subdirs[name]);
+    }
 
     buildIndex(basedir, dirnames, dir.subdirs, dir.files);
 }
@@ -182,6 +191,8 @@ int main(string[] args)
     auto outputPath = "./ddo/";
     foreach (ref idx, command; args[1 .. $])
     {
+        import std.typecons : tuple;
+
         switch (command)
         {
         case "s3_index":
@@ -189,7 +200,7 @@ int main(string[] args)
                 file.remove(jsonPath); // remove stale data
             auto dir = getBucket()
                 .listBucketContents
-                .map!(o => o.key)
+                .map!(o => tuple!("path", "isSymlinkDir")(o.key, false))
                 .makeIntoDirStructure();
             file.write(jsonPath, toJSON(dir).toPrettyString);
             break;
@@ -200,8 +211,8 @@ int main(string[] args)
             auto path = args[1 + ++idx].chomp("/") ~ "/";
             enum followSymlink = true;
             auto dir = dirEntries(path, SpanMode.breadth, !followSymlink)
-                .filter!(de => de.isFile)
-                .map!(de => de.name.chompPrefix(path))
+                .filter!(de => de.isFile || de.isSymlink && de.isDir)
+                .map!(de => tuple!("path", "isSymlinkDir")(de.name.chompPrefix(path), de.isSymlink))
                 .makeIntoDirStructure();
             file.write(jsonPath, toJSON(dir).toPrettyString);
             break;
