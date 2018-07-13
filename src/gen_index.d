@@ -183,7 +183,7 @@ int main(string[] args)
 {
     if (args.length < 2)
     {
-        stderr.writeln("Missing commands (index, and/or generate)");
+        stderr.writeln("Missing commands (s3_index, folder_index and/or generate)");
         return -1;
     }
 
