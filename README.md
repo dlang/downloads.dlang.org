@@ -42,3 +42,14 @@ Multiple commands can be combined
 ```
 ./src/build-gen-index s3_index generate
 ```
+
+How to deploy
+-------------
+
+`sync-ddo` will generate the index and HTML files and deploy them to the S3 bucket:
+
+```
+./sync-ddo
+```
+
+If you deploy manually, make sure to generate an up-to-date index file (`s3_index` or `folder_index`) and respective HTML files before.
