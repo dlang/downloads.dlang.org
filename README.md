@@ -2,21 +2,9 @@ Tool to pull list of files from the s3 downloads.dlang.org bucket
 and generate the appropriate index.html pages to allow the
 bucket to be used as a website.
 
-It expects a `config.json` file in the form:
-
-```
-{
-    "aws" : {
-        "key"    : "<aws access key>",
-        "secret" : "<aws secret key>",
-        "endpoint" : "s3-us-west-2.amazonaws.com"
-    },
-
-    "s3bucket" : "downloads.dlang.org",
-
-    "base_dir" : "/media/scratch/ddo-upload"
-}
-```
+Loads aws credentials and default region from ~/.aws/credentials and
+~/.aws/config, i.e. where the aws-cli stores it's information.
+See [Named Profiles - AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) for more info.
 
 How to build
 ----------
@@ -25,11 +13,12 @@ How to build
 make
 ```
 
-How to build
+How to generate
 ----------
 
 ```
-./src/build-gen-index <command>
+./src/build-gen-index --help
+./src/build-gen-index --command <command>
 ```
 
 Available commands:
@@ -38,9 +27,8 @@ Available commands:
 - `generate`: generate the HTML index pages
 
 Multiple commands can be combined
-
 ```
-./src/build-gen-index s3_index generate
+./src/build-gen-index --command s3_index --command generate
 ```
 
 How to deploy

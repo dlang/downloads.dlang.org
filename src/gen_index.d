@@ -164,9 +164,9 @@ void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
     buildIndex(basedir, dirnames, dir.subdirs, dir.files);
 }
 
-S3Bucket getBucket()
+S3Bucket getBucket(string awsProfile, string s3Bucket)
 {
-    auto c = load_config("config.json");
+    auto c = loadConfig(awsProfile);
 
     auto a = new AWS;
     a.accessKey = c.aws_key;
@@ -175,21 +175,38 @@ S3Bucket getBucket()
 
     auto s3 = new S3(a);
     auto s3bucket = new S3Bucket(s3);
-    s3bucket.name = c.s3_bucket;
+    s3bucket.name = s3Bucket;
     return s3bucket;
 }
 
 int main(string[] args)
 {
-    if (args.length < 2)
-    {
-        stderr.writeln("Missing commands (s3_index, folder_index and/or generate)");
-        return -1;
-    }
+    import std.getopt : config, getopt, defaultGetoptPrinter;
 
+    auto awsProfile = "ddo";
     auto jsonPath = "index.json";
     auto outputPath = "./ddo/";
-    foreach (ref idx, command; args[1 .. $])
+    auto s3Bucket = "downloads.dlang.org";
+    string[] commands;
+    // dfmt off
+    auto helpInformation = getopt(
+        args,
+        config.passThrough,
+        config.required,
+        "c|command", "Commands to run (can be specified multiple times).", &commands,
+        "aws-profile", "AWS profile name to use (default %s).".format(awsProfile), &awsProfile,
+        "s3-bucket", "S3 Bucket to index (default %s).".format(s3Bucket), &s3Bucket,
+        "json-path", "Path to write json index to (default %s).".format(jsonPath), &jsonPath,
+        "output-path", "Folder to generate index.html files to (default %s).".format(outputPath), &outputPath,
+    );
+    // dfmt on
+    if (helpInformation.helpWanted)
+    {
+        defaultGetoptPrinter(args[0]~"\n", helpInformation.options);
+        return 0;
+    }
+
+    foreach (ref idx, command; commands)
     {
         import std.typecons : tuple;
 
@@ -198,7 +215,7 @@ int main(string[] args)
         case "s3_index":
             if (file.exists(jsonPath))
                 file.remove(jsonPath); // remove stale data
-            auto dir = getBucket()
+            auto dir = getBucket(awsProfile, s3Bucket)
                 .listBucketContents
                 .map!(o => tuple!("path", "isSymlinkDir")(o.key, false))
                 .makeIntoDirStructure();
