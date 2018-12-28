@@ -1,7 +1,7 @@
 module config;
 
 import std.algorithm.iteration : filter, map, splitter;
-import std.algorithm.searching : find, startsWith;
+import std.algorithm.searching : find, startsWith, until;
 import std.exception : enforce;
 import std.json;
 import std.process : environment;
@@ -28,7 +28,7 @@ auto getIniSection(string path, string section)
             .find!(ln => ln.strip == "[default]");
     enforce(!lines.empty, "Failed to find ini section "~section~" in "~path~".");
     lines.popFront;
-    return lines.map!readIniLine;
+    return lines.until!(ln => ln.strip.startsWith("[")).map!readIniLine;
 }
 
 Tuple!(const(char)[], const(char)[]) readIniLine(return scope const char[] line)
