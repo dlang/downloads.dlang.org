@@ -139,7 +139,7 @@ void buildIndex(string basedir, string[] dirnames, const DirStructure[string] di
     {
         string filehtml;
 
-        filehtml ~= `<li><a href="` ~ urlprefix ~ joined ~ k ~ `">` ~
+        filehtml ~= `<li><a href="https://s3.us-west-2.amazonaws.com/downloads.dlang.org` ~ urlprefix ~ joined ~ k ~ `">` ~
             k ~ `</a></li>`;
 
         page ~= filehtml ~ "\n";
