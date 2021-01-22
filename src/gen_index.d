@@ -275,25 +275,25 @@ string genHeader()
 <script type="text/javascript">document.body.className += ' have-javascript'</script>
 <div id="top"><div class="helper"><div class="helper expand-container">    <div class="logo"><a href="http://dlang.org"><img id="logo" alt="D Logo" src="//dlang.org/images/dlogo.svg"></a></div>
     <a href="http://dlang.org/menu.html" title="Menu" class="hamburger expand-toggle"><span>Menu</span></a>
-    
+
 <div id="cssmenu"><ul>    <li><a href='http://dlang.org/getstarted.html'><span>Learn</span></a></li>
     <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/documentation.html'><span>Documentation</span></a>
-      
+
 <ul class='expand-content'><li><a href='http://dlang.org/spec/intro.html'>Language Reference</a></li><li><a href='http://dlang.org/phobos/index.html'>Library Reference</a></li><li><a href='http://dlang.org/comparison.html'>Feature Overview</a></li><li><a href='http://dlang.org/dmd-windows.html'>DMD Manual</a></li><li><a href='http://dlang.org/articles.html'>Articles
 </a></li></ul></li>
     <li><a href='http://dlang.org/download.html'><span>Downloads</span></a></li>
     <li><a href='http://code.dlang.org'><span>Packages</span></a></li>
     <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/community.html'><span>Community</span></a>
-      
+
 <ul class='expand-content'><li><a href='http://dlang.org/bugstats.php'>Bug Tracker</a></li><li><a href='    http://forum.dlang.org'>Forums</a></li><li><a href='    irc://irc.freenode.net/d'>IRC</a></li><li><a href='    http://github.com/dlang'>D on GitHub</a></li><li><a href='    http://wiki.dlang.org'>Wiki</a></li><li><a href='    http://wiki.dlang.org/Review_Queue'>Review Queue</a></li><li><a href='    http://twitter.com/search?q=%23dlang'>Twitter</a></li><li><a href='    http://digitalmars.com/d/dlinks.html'>More Links
 </a></li></ul></li>
     <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/resources.html'><span>Resources</span></a>
-      
+
 <ul class='expand-content'><li><a href='http://dlang.org/library/index.html'>NEW Library Reference Preview</a></li><li><a href='http://dlang.org/tools.html'>D-Specific Tools</a></li><li><a href='    http://rainers.github.io/visuald/visuald/StartPage.html'>Visual D</a></li><li><a href='    http://wiki.dlang.org/Editors'>Editors</a></li><li><a href='    http://wiki.dlang.org/IDEs'>IDEs</a></li><li><a href='    http://wiki.dlang.org/Tutorials'>Tutorials</a></li><li><a href='    http://wiki.dlang.org/Books'>Books</a></li><li><a href='http://dlang.org/dstyle.html'>The D Style</a></li><li><a href='http://dlang.org/glossary.html'>Glossary</a></li><li><a href='http://dlang.org/acknowledgements.html'>Acknowledgments</a></li><li><a href='http://dlang.org/sitemap.html'>Sitemap
 </a></li></ul></li>
 </ul></div>
     <div class="search-container expand-container">        <a href="http://dlang.org/search.html" class="expand-toggle" title="Search"><span>Search</span></a>
-        
+
     <div id="search-box">        <form method="get" action="//google.com/search">
             <input type="hidden" id="domains" name="domains" value="dlang.org">
             <input type="hidden" id="sourceid" name="sourceid" value="google-search">
@@ -302,7 +302,7 @@ string genHeader()
                     <option  value="dlang.org/spec">Language</option>
                     <option  value="dlang.org/phobos">Library</option>
                     <option  value="forum.dlang.org">Forums</option>
-                    
+
                 </select>
             </span></span><span id="search-submit"><button type="submit"><i class="fa fa-search"></i><span>go</span></button></span>
         </form>
@@ -310,7 +310,7 @@ string genHeader()
     </div>
 </div></div></div>
 
-<div class="container">    
+<div class="container">
     <div class="hyphenate" id="content">
 HEREDOC";
 }
