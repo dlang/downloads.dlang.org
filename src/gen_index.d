@@ -97,7 +97,7 @@ string dirlinks(string[] dirnames)
     foreach (d; dirnames)
     {
         accumulated ~= d ~ "/";
-        result ~= `<a href="` ~ urlprefix ~ accumulated ~ `">` ~ (d.length ? d : "[root]") ~ `</a>&nbsp;` ~ "\n";
+        result ~= `<a href="` ~ urlprefix ~ accumulated ~ `index.html">` ~ (d.length ? d : "[root]") ~ `</a>&nbsp;` ~ "\n";
     }
 
     return result;
@@ -127,7 +127,7 @@ void buildIndex(string basedir, string[] dirnames, const DirStructure[string] di
     {
         string filehtml;
 
-        filehtml ~= `<li><a href="` ~ urlprefix ~ joined ~ k ~ `/">` ~
+        filehtml ~= `<li><a href="` ~ urlprefix ~ joined ~ k ~ `/index.html">` ~
             k ~ `</a></li>`;
 
         page ~= filehtml ~ "\n";
