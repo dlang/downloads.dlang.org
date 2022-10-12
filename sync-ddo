@@ -5,7 +5,7 @@ set -x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 basedir="$DIR/ddo"
-bucket=s3://downloads.dlang.org
+bucket=s3://downloads-dlang-org
 extraargs="--acl public-read --cache-control max-age=604800"
 
 pushd $DIR

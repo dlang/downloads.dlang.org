@@ -12,7 +12,6 @@ import s3;
 
 import config;
 
-//enum urlprefix = "http://downloads.dlang.org.s3-website-us-east-1.amazonaws.com";
 enum urlprefix = "";
 
 struct DirStructure
@@ -186,7 +185,7 @@ int main(string[] args)
     auto awsProfile = "ddo";
     auto jsonPath = "index.json";
     auto outputPath = "./ddo/";
-    auto s3Bucket = "downloads.dlang.org";
+    auto s3Bucket = "downloads-dlang-org";
     string[] commands;
     // dfmt off
     auto helpInformation = getopt(

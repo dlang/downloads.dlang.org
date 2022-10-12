@@ -59,7 +59,7 @@ Config loadConfig(string awsProfile)
     foreach (key, val; getIniSection(home~"/.aws/config", "[profile "~awsProfile~"]"))
     {
         if (key == "region")
-            c.aws_endpoint = "s3-%s.amazonaws.com".format(val);
+            c.aws_endpoint = "s3.%s.backblazeb2.com".format(val);
     }
     enforce(!c.aws_endpoint.empty, "Failed to parse region from ~/.aws/config.");
 

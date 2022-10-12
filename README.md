@@ -1,4 +1,4 @@
-Tool to pull list of files from the s3 downloads.dlang.org bucket
+Tool to pull list of files from the s3 downloads-dlang-org bucket
 and generate the appropriate index.html pages to allow the
 bucket to be used as a website.
 
