@@ -1,7 +1,7 @@
 DMD?=dmd
 DFLAGS?=
 
-BUILD_GEN_INDEX_SRCS=gen_index.d config.d aws.d s3.d
+BUILD_GEN_INDEX_SRCS=gen_index.d config.d aws.d s3.d undead_xml.d
 BUILD_GEN_INDEX_LIBS=-L-lcrypto -L-lcurl
 
 all: build-gen-index

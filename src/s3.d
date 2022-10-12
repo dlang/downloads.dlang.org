@@ -264,7 +264,7 @@ class S3ListResults
     {
         import std.conv;
         import std.stdio;
-        import std.xml;
+        import undead_xml;
 
         auto xml = new DocumentParser(input);
         xml.onEndTag["Name"] = (in Element e) { name = e.text(); };
@@ -389,7 +389,7 @@ class S3Bucket
 
 S3Bucket[] listBuckets(const S3 s)
 {
-    import std.xml;
+    import undead_xml;
 
     auto contents = cast(string)makeRequest(s.aws, "GET", null, "", null, null).idup;
 
