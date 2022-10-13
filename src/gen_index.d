@@ -7,10 +7,7 @@ import std.json;
 import std.string;
 import std.stdio;
 
-import aws;
-import s3;
-
-import config;
+import s3_index;
 
 enum urlprefix = "";
 
@@ -163,21 +160,6 @@ void iterate(string basedir, string[] dirnames, const ref DirStructure dir)
     buildIndex(basedir, dirnames, dir.subdirs, dir.files);
 }
 
-S3Bucket getBucket(string awsProfile, string s3Bucket)
-{
-    auto c = loadConfig(awsProfile);
-
-    auto a = new AWS;
-    a.accessKey = c.aws_key;
-    a.secretKey = c.aws_secret;
-    a.endpoint = c.aws_endpoint;
-
-    auto s3 = new S3(a);
-    auto s3bucket = new S3Bucket(s3);
-    s3bucket.name = s3Bucket;
-    return s3bucket;
-}
-
 int main(string[] args)
 {
     import std.getopt : config, getopt, defaultGetoptPrinter;
@@ -214,8 +196,8 @@ int main(string[] args)
         case "s3_index":
             if (file.exists(jsonPath))
                 file.remove(jsonPath); // remove stale data
-            auto dir = getBucket(awsProfile, s3Bucket)
-                .listBucketContents
+            auto dir = getS3Connection(awsProfile)
+                .listBucketContents(s3Bucket)
                 .map!(o => tuple!("path", "isSymlinkDir")(o.key, false))
                 .makeIntoDirStructure();
             file.write(jsonPath, toJSON(dir).toPrettyString);
