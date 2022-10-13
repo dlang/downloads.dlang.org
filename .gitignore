@@ -3,3 +3,4 @@ index.json
 *.o
 src/build-gen-index
 ddo/
+.dub

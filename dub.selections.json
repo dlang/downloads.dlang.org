@@ -1,0 +1,10 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"arsd-official": "2.0.0",
+		"aws": "1.1.10",
+		"cachetools": "0.3.1",
+		"requests": "2.0.8",
+		"unit-threaded": "2.1.2"
+	}
+}

@@ -1,0 +1,11 @@
+name "build-gen-index"
+description "Tool to pull list of files from the s3 downloads-dlang-org bucket and generate the appropriate index.html pages to allow the bucket to be used as a website."
+authors "Iain Buclaw"
+copyright "Copyright © 1999-2022, The D Language Foundation"
+license "BSL-1.0"
+
+targetType "executable"
+targetPath "src"
+sourcePaths "src"
+
+dependency "aws" version="~>1.1.10"
