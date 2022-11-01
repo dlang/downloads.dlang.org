@@ -5,13 +5,19 @@ set -xeo pipefail
 bucket=downloads-dlang-org
 extraargs="--acl public-read --cache-control max-age=604800"
 
+function awsb2
+{
+    region=$(aws --profile ddo configure list | awk '$1 == "region" { print $2 }')
+    aws --endpoint-url="https://s3.${region}.backblazeb2.com" $@
+}
+
 # $1 == version
 # $2 == source
 function makelink
 {
     toplevel=${2%%/*}
     filename=`basename $2`
-    aws --output json --profile ddo s3 cp s3://$bucket/$2 s3://$bucket/$toplevel/${1:0:1}.x/$1/$filename $extraargs
+    awsb2 --output json --profile ddo s3 cp s3://$bucket/$2 s3://$bucket/$toplevel/${1:0:1}.x/$1/$filename $extraargs
 
 #    cd /media/scratch/ddo
 #    mkdir -p /media/scratch/ddo/$toplevel/${1:0:1}.x/$1
