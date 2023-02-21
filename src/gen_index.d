@@ -235,9 +235,9 @@ string genHeader()
 <!DOCTYPE html>
 <html lang="en-US">
 <!--
-    Copyright (c) 1999-2016 by Digital Mars
-    All Rights Reserved Written by Walter Bright
-    http://digitalmars.com
+    Copyright (c) 1999-2023 by the D Language Foundation
+    All Rights Reserved.
+    https://dlang.org/foundation_overview.html
   -->
 <head>
 <meta charset="utf-8">
@@ -254,36 +254,65 @@ string genHeader()
 </head>
 <body id='ReleaseArchive'>
 <script type="text/javascript">document.body.className += ' have-javascript'</script>
-<div id="top"><div class="helper"><div class="helper expand-container">    <div class="logo"><a href="http://dlang.org"><img id="logo" alt="D Logo" src="//dlang.org/images/dlogo.svg"></a></div>
-    <a href="http://dlang.org/menu.html" title="Menu" class="hamburger expand-toggle"><span>Menu</span></a>
-    
-<div id="cssmenu"><ul>    <li><a href='http://dlang.org/getstarted.html'><span>Learn</span></a></li>
-    <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/documentation.html'><span>Documentation</span></a>
-      
-<ul class='expand-content'><li><a href='http://dlang.org/spec/intro.html'>Language Reference</a></li><li><a href='http://dlang.org/phobos/index.html'>Library Reference</a></li><li><a href='http://dlang.org/comparison.html'>Feature Overview</a></li><li><a href='http://dlang.org/dmd-windows.html'>DMD Manual</a></li><li><a href='http://dlang.org/articles.html'>Articles
-</a></li></ul></li>
-    <li><a href='http://dlang.org/download.html'><span>Downloads</span></a></li>
-    <li><a href='http://code.dlang.org'><span>Packages</span></a></li>
-    <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/community.html'><span>Community</span></a>
-      
-<ul class='expand-content'><li><a href='http://dlang.org/bugstats.php'>Bug Tracker</a></li><li><a href='    http://forum.dlang.org'>Forums</a></li><li><a href='    irc://irc.freenode.net/d'>IRC</a></li><li><a href='    http://github.com/dlang'>D on GitHub</a></li><li><a href='    http://wiki.dlang.org'>Wiki</a></li><li><a href='    http://wiki.dlang.org/Review_Queue'>Review Queue</a></li><li><a href='    http://twitter.com/search?q=%23dlang'>Twitter</a></li><li><a href='    http://digitalmars.com/d/dlinks.html'>More Links
-</a></li></ul></li>
-    <li class='expand-container'><a class='expand-toggle' href='http://dlang.org/resources.html'><span>Resources</span></a>
-      
-<ul class='expand-content'><li><a href='http://dlang.org/library/index.html'>NEW Library Reference Preview</a></li><li><a href='http://dlang.org/tools.html'>D-Specific Tools</a></li><li><a href='    http://rainers.github.io/visuald/visuald/StartPage.html'>Visual D</a></li><li><a href='    http://wiki.dlang.org/Editors'>Editors</a></li><li><a href='    http://wiki.dlang.org/IDEs'>IDEs</a></li><li><a href='    http://wiki.dlang.org/Tutorials'>Tutorials</a></li><li><a href='    http://wiki.dlang.org/Books'>Books</a></li><li><a href='http://dlang.org/dstyle.html'>The D Style</a></li><li><a href='http://dlang.org/glossary.html'>Glossary</a></li><li><a href='http://dlang.org/acknowledgements.html'>Acknowledgments</a></li><li><a href='http://dlang.org/sitemap.html'>Sitemap
-</a></li></ul></li>
+<div id="top"><div class="helper"><div class="helper expand-container">    <div class="logo"><a href="//dlang.org"><img id="logo" alt="D Logo" src="//dlang.org/images/dlogo.svg"></a></div>
+    <a href="//dlang.org/menu.html" title="Menu" class="hamburger expand-toggle"><span>Menu</span></a>
+
+<div id="cssmenu"><ul>    <li><a href='https://tour.dlang.org'><span>Learn</span></a></li>
+    <li class='expand-container'><a class='expand-toggle' href='//dlang.org/documentation.html'><span>Documentation</span></a>
+
+<ul class='expand-content'>    <li><a href='//dlang.org/spec/spec.html'>Language Reference</a></li>
+    <li><a href='//dlang.org/phobos/index.html'>Library Reference</a></li>
+    <li><a href='//dlang.org/dmd.html'>Command-line Reference</a></li>
+    <li class="menu-divider"><a href='//dlang.org/comparison.html'>Feature Overview</a></li>
+    <li><a href='//dlang.org/articles.html'>Articles</a></li>
+ </ul></li>
+    <li><a href='//dlang.org/download.html'><span>Downloads</span></a></li>
+    <li><a href='https://code.dlang.org'><span>Packages</span></a></li>
+    <li class='expand-container'><a class='expand-toggle' href='//dlang.org/community.html'><span>Community</span></a>
+
+<ul class='expand-content'>    <li><a href='https://dlang.org/blog'>Blog</a></li>
+    <li><a href='//dlang.org/orgs-using-d.html'>Orgs using D</a></li>
+    <li><a href='https://twitter.com/search?q=%23dlang'>Twitter</a></li>
+    <li class="menu-divider"><a href='https://forum.dlang.org'>Forums</a></li>
+    <li><a href='irc://irc.libera.chat/d'>IRC</a></li>
+    <li><a href='https://discord.gg/bMZk9Q4'>Community Discord</a></li>
+    <li><a href='https://wiki.dlang.org'>Wiki</a></li>
+    <li class="menu-divider"><a href='https://github.com/dlang'>GitHub</a></li>
+    <li><a href='//dlang.org/bugstats.html'>Issues</a></li>
+    <li><a href='https://wiki.dlang.org/Get_involved'>Get involved</a></li>
+    <li class="menu-divider"><a href='//dlang.org/foundation/contributors.html'>Contributors</a></li>
+    <li><a href='//dlang.org/foundation/index.html'>Foundation</a></li>
+    <li><a href='/security.html'>Security Team</a></li>
+    <li><a href='//dlang.org/foundation/donate.html'>Donate</a></li>
+    <li><a href='//dlang.org/foundation/sponsors.html'>Sponsors</a></li>
+ </ul></li>
+    <li class='expand-container'><a class='expand-toggle' href='//dlang.org/resources.html'><span>Resources</span></a>
+
+<ul class='expand-content'>    <li><a href='https://tour.dlang.org'>Tour</a></li>
+    <li><a href='https://wiki.dlang.org/Books'>Books</a></li>
+    <li><a href='https://wiki.dlang.org/Tutorials'>Tutorials</a></li>
+    <li class="menu-divider"><a href='https://wiki.dlang.org/Development_tools'>Tools</a></li>
+    <li><a href='https://wiki.dlang.org/Editors'>Editors</a></li>
+    <li><a href='https://wiki.dlang.org/IDEs'>IDEs</a></li>
+    <li><a href='https://run.dlang.io'>run.dlang.io</a></li>
+    <li><a href='http://rainers.github.io/visuald/visuald/StartPage.html'>Visual D</a></li>
+    <li class="menu-divider"><a href='//dlang.org/acknowledgements.html'>Acknowledgments</a></li>
+    <li><a href='//dlang.org/dstyle.html'>D Style</a></li>
+    <li><a href='//dlang.org/glossary.html'>Glossary</a></li>
+    <li><a href='//dlang.org/sitemap.html'>Sitemap</a></li>
+ </ul></li>
 </ul></div>
-    <div class="search-container expand-container">        <a href="http://dlang.org/search.html" class="expand-toggle" title="Search"><span>Search</span></a>
-        
-    <div id="search-box">        <form method="get" action="//google.com/search">
+    <div class="search-container expand-container">        <a href="//dlang.org/search.html" class="expand-toggle" title="Search"><span>Search</span></a>
+
+    <div id="search-box">        <form method="get" action="https://google.com/search">
             <input type="hidden" id="domains" name="domains" value="dlang.org">
             <input type="hidden" id="sourceid" name="sourceid" value="google-search">
-            <span id="search-query"><input id="q" name="q" placeholder="Search"></span><span id="search-dropdown"><span class="helper">                <select id="sitesearch" name="sitesearch" size="1">
+            <span id="search-query"><input id="q" name="q" placeholder="Google Search"></span><span id="search-dropdown"><span class="helper">                <select id="sitesearch" name="sitesearch" size="1">
                     <option value="dlang.org">Entire Site</option>
                     <option  value="dlang.org/spec">Language</option>
                     <option  value="dlang.org/phobos">Library</option>
                     <option  value="forum.dlang.org">Forums</option>
-                    
+
                 </select>
             </span></span><span id="search-submit"><button type="submit"><i class="fa fa-search"></i><span>go</span></button></span>
         </form>
@@ -306,7 +335,7 @@ string genFooter()
     <script type="text/javascript">window.jQuery || document.write('\x3Cscript src="js/jquery-1.7.2.min.js">\x3C/script>');</script>
     <script type="text/javascript" src="//dlang.org/js/dlang.js"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </body>
 </html>
 HEREDOC";
