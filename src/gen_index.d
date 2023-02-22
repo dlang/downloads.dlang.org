@@ -282,7 +282,7 @@ string genHeader()
     <li><a href='https://wiki.dlang.org/Get_involved'>Get involved</a></li>
     <li class="menu-divider"><a href='//dlang.org/foundation/contributors.html'>Contributors</a></li>
     <li><a href='//dlang.org/foundation/index.html'>Foundation</a></li>
-    <li><a href='/security.html'>Security Team</a></li>
+    <li><a href='//dlang.org/security.html'>Security Team</a></li>
     <li><a href='//dlang.org/foundation/donate.html'>Donate</a></li>
     <li><a href='//dlang.org/foundation/sponsors.html'>Sponsors</a></li>
  </ul></li>
