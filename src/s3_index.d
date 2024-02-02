@@ -40,6 +40,8 @@ Tuple!(const(char)[], const(char)[]) readIniLine(return scope const char[] line)
 {
     auto parts = line.stripRight.splitter!(c => c == ' ' || c == '=')
         .filter!(p => !p.empty);
+    if (parts.empty)
+        return typeof(return).init;
     auto key = parts.front;
     parts.popFront;
     auto val = parts.front;
