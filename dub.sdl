@@ -8,4 +8,4 @@ targetType "executable"
 targetPath "src"
 sourcePaths "src"
 
-dependency "aws" version="~>1.1.10"
+dependency "aws" version="~>1.1.11"
