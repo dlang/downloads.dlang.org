@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<!--
+    Copyright (c) 1999-2023 by the D Language Foundation
+    All Rights Reserved.
+    https://dlang.org/foundation_overview.html
+  -->
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="D programming language">
+<meta name="description" content="D Programming Language">
+<title>Release Archive - D Programming Language</title>
+
+<link rel="stylesheet" href="//dlang.org/css/codemirror.css">
+<link rel="stylesheet" href="//dlang.org/css/style.css">
+<link rel="stylesheet" href="//dlang.org/css/print.css" media="print">
+<link rel="shortcut icon" href="//dlang.org/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1, maximum-scale=10.0">
+
+</head>
+<body id='ReleaseArchive'>
+<script type="text/javascript">document.body.className += ' have-javascript'</script>
+<div id="top"><div class="helper"><div class="helper expand-container">    <div class="logo"><a href="//dlang.org"><img id="logo" alt="D Logo" src="//dlang.org/images/dlogo.svg"></a></div>
+    <a href="//dlang.org/menu.html" title="Menu" class="hamburger expand-toggle"><span>Menu</span></a>
+
+<div id="cssmenu"><ul>    <li><a href='https://tour.dlang.org'><span>Learn</span></a></li>
+    <li class='expand-container'><a class='expand-toggle' href='//dlang.org/documentation.html'><span>Documentation</span></a>
+
+<ul class='expand-content'>    <li><a href='//dlang.org/spec/spec.html'>Language Reference</a></li>
+    <li><a href='//dlang.org/phobos/index.html'>Library Reference</a></li>
+    <li><a href='//dlang.org/dmd.html'>Command-line Reference</a></li>
+    <li class="menu-divider"><a href='//dlang.org/comparison.html'>Feature Overview</a></li>
+    <li><a href='//dlang.org/articles.html'>Articles</a></li>
+ </ul></li>
+    <li><a href='//dlang.org/download.html'><span>Downloads</span></a></li>
+    <li><a href='https://code.dlang.org'><span>Packages</span></a></li>
+    <li class='expand-container'><a class='expand-toggle' href='//dlang.org/community.html'><span>Community</span></a>
+
+<ul class='expand-content'>    <li><a href='https://dlang.org/blog'>Blog</a></li>
+    <li><a href='//dlang.org/orgs-using-d.html'>Orgs using D</a></li>
+    <li><a href='https://twitter.com/search?q=%23dlang'>Twitter</a></li>
+    <li class="menu-divider"><a href='https://forum.dlang.org'>Forums</a></li>
+    <li><a href='irc://irc.libera.chat/d'>IRC</a></li>
+    <li><a href='https://discord.gg/bMZk9Q4'>Community Discord</a></li>
+    <li><a href='https://wiki.dlang.org'>Wiki</a></li>
+    <li class="menu-divider"><a href='https://github.com/dlang'>GitHub</a></li>
+    <li><a href='//dlang.org/bugstats.html'>Issues</a></li>
+    <li><a href='https://wiki.dlang.org/Get_involved'>Get involved</a></li>
+    <li class="menu-divider"><a href='//dlang.org/foundation/contributors.html'>Contributors</a></li>
+    <li><a href='//dlang.org/foundation/index.html'>Foundation</a></li>
+    <li><a href='//dlang.org/security.html'>Security Team</a></li>
+    <li><a href='//dlang.org/foundation/donate.html'>Donate</a></li>
+    <li><a href='//dlang.org/foundation/sponsors.html'>Sponsors</a></li>
+ </ul></li>
+    <li class='expand-container'><a class='expand-toggle' href='//dlang.org/resources.html'><span>Resources</span></a>
+
+<ul class='expand-content'>    <li><a href='https://tour.dlang.org'>Tour</a></li>
+    <li><a href='https://wiki.dlang.org/Books'>Books</a></li>
+    <li><a href='https://wiki.dlang.org/Tutorials'>Tutorials</a></li>
+    <li class="menu-divider"><a href='https://wiki.dlang.org/Development_tools'>Tools</a></li>
+    <li><a href='https://wiki.dlang.org/Editors'>Editors</a></li>
+    <li><a href='https://wiki.dlang.org/IDEs'>IDEs</a></li>
+    <li><a href='https://run.dlang.io'>run.dlang.io</a></li>
+    <li><a href='http://rainers.github.io/visuald/visuald/StartPage.html'>Visual D</a></li>
+    <li class="menu-divider"><a href='//dlang.org/acknowledgements.html'>Acknowledgments</a></li>
+    <li><a href='//dlang.org/dstyle.html'>D Style</a></li>
+    <li><a href='//dlang.org/glossary.html'>Glossary</a></li>
+    <li><a href='//dlang.org/sitemap.html'>Sitemap</a></li>
+ </ul></li>
+</ul></div>
+    <div class="search-container expand-container">        <a href="//dlang.org/search.html" class="expand-toggle" title="Search"><span>Search</span></a>
+
+    <div id="search-box">        <form method="get" action="https://google.com/search">
+            <input type="hidden" id="domains" name="domains" value="dlang.org">
+            <input type="hidden" id="sourceid" name="sourceid" value="google-search">
+            <span id="search-query"><input id="q" name="q" placeholder="Google Search"></span><span id="search-dropdown"><span class="helper">                <select id="sitesearch" name="sitesearch" size="1">
+                    <option value="dlang.org">Entire Site</option>
+                    <option  value="dlang.org/spec">Language</option>
+                    <option  value="dlang.org/phobos">Library</option>
+                    <option  value="forum.dlang.org">Forums</option>
+
+                </select>
+            </span></span><span id="search-submit"><button type="submit"><i class="fa fa-search"></i><span>go</span></button></span>
+        </form>
+    </div>
+    </div>
+</div></div></div>
+
+<div class="container">    
+    <div class="hyphenate" id="content">
+<h2><a href="/">[root]</a>&nbsp;
+<a href="/releases/">releases</a>&nbsp;
+<a href="/releases/2.x/">2.x</a>&nbsp;
+</h2>
+Subdirectories:<br>
+<ul>
+<li><a href="/releases/2.x/2.112.0/">2.112.0</a></li>
+<li><a href="/releases/2.x/2.111.0/">2.111.0</a></li>
+<li><a href="/releases/2.x/2.110.0/">2.110.0</a></li>
+<li><a href="/releases/2.x/2.109.1/">2.109.1</a></li>
+<li><a href="/releases/2.x/2.109.0/">2.109.0</a></li>
+<li><a href="/releases/2.x/2.108.1/">2.108.1</a></li>
+<li><a href="/releases/2.x/2.108.0/">2.108.0</a></li>
+<li><a href="/releases/2.x/2.107.1/">2.107.1</a></li>
+<li><a href="/releases/2.x/2.107.0/">2.107.0</a></li>
+<li><a href="/releases/2.x/2.106.1/">2.106.1</a></li>
+<li><a href="/releases/2.x/2.106.0/">2.106.0</a></li>
+<li><a href="/releases/2.x/2.105.3/">2.105.3</a></li>
+<li><a href="/releases/2.x/2.105.2/">2.105.2</a></li>
+<li><a href="/releases/2.x/2.105.1/">2.105.1</a></li>
+<li><a href="/releases/2.x/2.105.0/">2.105.0</a></li>
+<li><a href="/releases/2.x/2.104.2/">2.104.2</a></li>
+<li><a href="/releases/2.x/2.104.1/">2.104.1</a></li>
+<li><a href="/releases/2.x/2.104.0/">2.104.0</a></li>
+<li><a href="/releases/2.x/2.103.1/">2.103.1</a></li>
+<li><a href="/releases/2.x/2.103.0/">2.103.0</a></li>
+<li><a href="/releases/2.x/2.102.2/">2.102.2</a></li>
+<li><a href="/releases/2.x/2.102.1/">2.102.1</a></li>
+<li><a href="/releases/2.x/2.102.0/">2.102.0</a></li>
+<li><a href="/releases/2.x/2.101.2/">2.101.2</a></li>
+<li><a href="/releases/2.x/2.101.1/">2.101.1</a></li>
+<li><a href="/releases/2.x/2.101.0/">2.101.0</a></li>
+<li><a href="/releases/2.x/2.100.2/">2.100.2</a></li>
+<li><a href="/releases/2.x/2.100.0/">2.100.0</a></li>
+<li><a href="/releases/2.x/2.099.1/">2.099.1</a></li>
+<li><a href="/releases/2.x/2.099.0/">2.099.0</a></li>
+<li><a href="/releases/2.x/2.098.1/">2.098.1</a></li>
+<li><a href="/releases/2.x/2.098.0/">2.098.0</a></li>
+<li><a href="/releases/2.x/2.097.2/">2.097.2</a></li>
+<li><a href="/releases/2.x/2.097.1/">2.097.1</a></li>
+<li><a href="/releases/2.x/2.097.0/">2.097.0</a></li>
+<li><a href="/releases/2.x/2.096.1/">2.096.1</a></li>
+<li><a href="/releases/2.x/2.096.0/">2.096.0</a></li>
+<li><a href="/releases/2.x/2.095.1/">2.095.1</a></li>
+<li><a href="/releases/2.x/2.095.0/">2.095.0</a></li>
+<li><a href="/releases/2.x/2.094.2/">2.094.2</a></li>
+<li><a href="/releases/2.x/2.094.1/">2.094.1</a></li>
+<li><a href="/releases/2.x/2.094.0/">2.094.0</a></li>
+<li><a href="/releases/2.x/2.093.1/">2.093.1</a></li>
+<li><a href="/releases/2.x/2.093.0/">2.093.0</a></li>
+<li><a href="/releases/2.x/2.092.1/">2.092.1</a></li>
+<li><a href="/releases/2.x/2.092.0/">2.092.0</a></li>
+<li><a href="/releases/2.x/2.091.1/">2.091.1</a></li>
+<li><a href="/releases/2.x/2.091.0/">2.091.0</a></li>
+<li><a href="/releases/2.x/2.090.1/">2.090.1</a></li>
+<li><a href="/releases/2.x/2.090.0/">2.090.0</a></li>
+<li><a href="/releases/2.x/2.089.1/">2.089.1</a></li>
+<li><a href="/releases/2.x/2.089.0/">2.089.0</a></li>
+<li><a href="/releases/2.x/2.088.1/">2.088.1</a></li>
+<li><a href="/releases/2.x/2.088.0/">2.088.0</a></li>
+<li><a href="/releases/2.x/2.087.1/">2.087.1</a></li>
+<li><a href="/releases/2.x/2.087.0/">2.087.0</a></li>
+<li><a href="/releases/2.x/2.086.1/">2.086.1</a></li>
+<li><a href="/releases/2.x/2.086.0/">2.086.0</a></li>
+<li><a href="/releases/2.x/2.085.1/">2.085.1</a></li>
+<li><a href="/releases/2.x/2.085.0/">2.085.0</a></li>
+<li><a href="/releases/2.x/2.084.1/">2.084.1</a></li>
+<li><a href="/releases/2.x/2.084.0/">2.084.0</a></li>
+<li><a href="/releases/2.x/2.083.1/">2.083.1</a></li>
+<li><a href="/releases/2.x/2.083.0/">2.083.0</a></li>
+<li><a href="/releases/2.x/2.082.1/">2.082.1</a></li>
+<li><a href="/releases/2.x/2.082.0/">2.082.0</a></li>
+<li><a href="/releases/2.x/2.081.2/">2.081.2</a></li>
+<li><a href="/releases/2.x/2.081.1/">2.081.1</a></li>
+<li><a href="/releases/2.x/2.081.0/">2.081.0</a></li>
+<li><a href="/releases/2.x/2.080.1/">2.080.1</a></li>
+<li><a href="/releases/2.x/2.080.0/">2.080.0</a></li>
+<li><a href="/releases/2.x/2.079.1/">2.079.1</a></li>
+<li><a href="/releases/2.x/2.079.0/">2.079.0</a></li>
+<li><a href="/releases/2.x/2.078.3/">2.078.3</a></li>
+<li><a href="/releases/2.x/2.078.2/">2.078.2</a></li>
+<li><a href="/releases/2.x/2.078.1/">2.078.1</a></li>
+<li><a href="/releases/2.x/2.078.0/">2.078.0</a></li>
+<li><a href="/releases/2.x/2.077.1/">2.077.1</a></li>
+<li><a href="/releases/2.x/2.077.0/">2.077.0</a></li>
+<li><a href="/releases/2.x/2.076.1/">2.076.1</a></li>
+<li><a href="/releases/2.x/2.076.0/">2.076.0</a></li>
+<li><a href="/releases/2.x/2.075.1/">2.075.1</a></li>
+<li><a href="/releases/2.x/2.075.0/">2.075.0</a></li>
+<li><a href="/releases/2.x/2.074.1/">2.074.1</a></li>
+<li><a href="/releases/2.x/2.074.0/">2.074.0</a></li>
+<li><a href="/releases/2.x/2.073.2/">2.073.2</a></li>
+<li><a href="/releases/2.x/2.073.1/">2.073.1</a></li>
+<li><a href="/releases/2.x/2.073.0/">2.073.0</a></li>
+<li><a href="/releases/2.x/2.072.2/">2.072.2</a></li>
+<li><a href="/releases/2.x/2.072.1/">2.072.1</a></li>
+<li><a href="/releases/2.x/2.072.0/">2.072.0</a></li>
+<li><a href="/releases/2.x/2.071.2/">2.071.2</a></li>
+<li><a href="/releases/2.x/2.071.1/">2.071.1</a></li>
+<li><a href="/releases/2.x/2.071.0/">2.071.0</a></li>
+<li><a href="/releases/2.x/2.070.2/">2.070.2</a></li>
+<li><a href="/releases/2.x/2.070.1/">2.070.1</a></li>
+<li><a href="/releases/2.x/2.070.0/">2.070.0</a></li>
+<li><a href="/releases/2.x/2.069.2/">2.069.2</a></li>
+<li><a href="/releases/2.x/2.069.1/">2.069.1</a></li>
+<li><a href="/releases/2.x/2.069.0/">2.069.0</a></li>
+<li><a href="/releases/2.x/2.068.2/">2.068.2</a></li>
+<li><a href="/releases/2.x/2.068.1/">2.068.1</a></li>
+<li><a href="/releases/2.x/2.068.0/">2.068.0</a></li>
+<li><a href="/releases/2.x/2.067.1/">2.067.1</a></li>
+<li><a href="/releases/2.x/2.067.0/">2.067.0</a></li>
+<li><a href="/releases/2.x/2.066.1/">2.066.1</a></li>
+<li><a href="/releases/2.x/2.066.0/">2.066.0</a></li>
+<li><a href="/releases/2.x/2.065.0/">2.065.0</a></li>
+<li><a href="/releases/2.x/2.064/">2.064</a></li>
+<li><a href="/releases/2.x/2.063/">2.063</a></li>
+<li><a href="/releases/2.x/2.062/">2.062</a></li>
+<li><a href="/releases/2.x/2.061/">2.061</a></li>
+<li><a href="/releases/2.x/2.060/">2.060</a></li>
+<li><a href="/releases/2.x/2.059/">2.059</a></li>
+<li><a href="/releases/2.x/2.058/">2.058</a></li>
+<li><a href="/releases/2.x/2.057/">2.057</a></li>
+<li><a href="/releases/2.x/2.056/">2.056</a></li>
+<li><a href="/releases/2.x/2.055/">2.055</a></li>
+<li><a href="/releases/2.x/2.054/">2.054</a></li>
+<li><a href="/releases/2.x/2.053/">2.053</a></li>
+<li><a href="/releases/2.x/2.052/">2.052</a></li>
+<li><a href="/releases/2.x/2.051/">2.051</a></li>
+<li><a href="/releases/2.x/2.050/">2.050</a></li>
+<li><a href="/releases/2.x/2.049/">2.049</a></li>
+<li><a href="/releases/2.x/2.048/">2.048</a></li>
+<li><a href="/releases/2.x/2.047/">2.047</a></li>
+<li><a href="/releases/2.x/2.046/">2.046</a></li>
+<li><a href="/releases/2.x/2.045/">2.045</a></li>
+<li><a href="/releases/2.x/2.044/">2.044</a></li>
+<li><a href="/releases/2.x/2.043/">2.043</a></li>
+<li><a href="/releases/2.x/2.042/">2.042</a></li>
+<li><a href="/releases/2.x/2.041/">2.041</a></li>
+<li><a href="/releases/2.x/2.040/">2.040</a></li>
+<li><a href="/releases/2.x/2.039/">2.039</a></li>
+<li><a href="/releases/2.x/2.038/">2.038</a></li>
+<li><a href="/releases/2.x/2.037/">2.037</a></li>
+<li><a href="/releases/2.x/2.036/">2.036</a></li>
+<li><a href="/releases/2.x/2.035/">2.035</a></li>
+<li><a href="/releases/2.x/2.034/">2.034</a></li>
+<li><a href="/releases/2.x/2.033/">2.033</a></li>
+<li><a href="/releases/2.x/2.032/">2.032</a></li>
+<li><a href="/releases/2.x/2.031/">2.031</a></li>
+<li><a href="/releases/2.x/2.030/">2.030</a></li>
+<li><a href="/releases/2.x/2.029/">2.029</a></li>
+<li><a href="/releases/2.x/2.028/">2.028</a></li>
+<li><a href="/releases/2.x/2.027/">2.027</a></li>
+<li><a href="/releases/2.x/2.026/">2.026</a></li>
+<li><a href="/releases/2.x/2.025/">2.025</a></li>
+<li><a href="/releases/2.x/2.023/">2.023</a></li>
+<li><a href="/releases/2.x/2.022/">2.022</a></li>
+<li><a href="/releases/2.x/2.021/">2.021</a></li>
+<li><a href="/releases/2.x/2.020/">2.020</a></li>
+<li><a href="/releases/2.x/2.019/">2.019</a></li>
+<li><a href="/releases/2.x/2.018/">2.018</a></li>
+<li><a href="/releases/2.x/2.017/">2.017</a></li>
+<li><a href="/releases/2.x/2.016/">2.016</a></li>
+<li><a href="/releases/2.x/2.015/">2.015</a></li>
+<li><a href="/releases/2.x/2.014/">2.014</a></li>
+<li><a href="/releases/2.x/2.013/">2.013</a></li>
+<li><a href="/releases/2.x/2.012/">2.012</a></li>
+<li><a href="/releases/2.x/2.011/">2.011</a></li>
+<li><a href="/releases/2.x/2.010/">2.010</a></li>
+<li><a href="/releases/2.x/2.009/">2.009</a></li>
+<li><a href="/releases/2.x/2.008/">2.008</a></li>
+<li><a href="/releases/2.x/2.007/">2.007</a></li>
+<li><a href="/releases/2.x/2.006/">2.006</a></li>
+<li><a href="/releases/2.x/2.005/">2.005</a></li>
+<li><a href="/releases/2.x/2.004/">2.004</a></li>
+<li><a href="/releases/2.x/2.003/">2.003</a></li>
+<li><a href="/releases/2.x/2.002/">2.002</a></li>
+<li><a href="/releases/2.x/2.001/">2.001</a></li>
+<li><a href="/releases/2.x/2.000/">2.000</a></li>
+</ul>
+Files:<br>
+<ul>
+</ul>
+    </div>
+</div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">window.jQuery || document.write('\x3Cscript src="js/jquery-1.7.2.min.js">\x3C/script>');</script>
+    <script type="text/javascript" src="//dlang.org/js/dlang.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</body>
+</html>
