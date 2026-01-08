@@ -11976,6 +11976,8 @@ makelink 2.112.0 releases/2026/dmd.2.112.0.osx.tar.xz
 makelink 2.112.0 releases/2026/dmd.2.112.0.osx.tar.xz.sig
 makelink 2.112.0 releases/2026/dmd.2.112.0.osx.zip
 makelink 2.112.0 releases/2026/dmd.2.112.0.osx.zip.sig
+makelink 2.112.0 releases/2026/dmd.2.112.0.windows.7z
+makelink 2.112.0 releases/2026/dmd.2.112.0.windows.7z.sig
 makelink 2.112.0 releases/2026/dmd.2.112.0.windows.zip
 makelink 2.112.0 releases/2026/dmd.2.112.0.windows.zip.sig
 makelink 2.112.0 releases/2026/dmd-2.112.exe
