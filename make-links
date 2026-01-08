@@ -11950,5 +11950,8 @@ function makelink
 #makelink 2.112.0 pre-releases/2025/libphobos2-112_2.112.0~beta.1-0_i386.deb.sig
 #makelink 2.112.0 pre-releases/2025/libphobos2-112_2.112.0~beta.1-0_i386.deb.sig.sig
 
+#makelink 2.112.0 releases/2026/dmd.2.112.0.windows.7z
+#makelink 2.112.0 releases/2026/dmd.2.112.0.windows.7z.sig
+
 makelink 2.112.0 releases/2026/dmd.2.112.0.windows.7z
 makelink 2.112.0 releases/2026/dmd.2.112.0.windows.7z.sig
